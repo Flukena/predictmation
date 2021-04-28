@@ -16,3 +16,4 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 const PORT  = process.env.PORT || 3000
 
 app.listen(PORT, ()=>console.log(`server is runing in port ${PORT}`))
+// หฟกหฟกห
