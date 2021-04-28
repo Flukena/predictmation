@@ -1,13 +1,12 @@
 <template>
   <div id="app">
-    <Index></Index>
     <Navbar></Navbar>
     <router-view></router-view>
     </div>
 </template>
 
 <script>
-import Index from './views/Index';
+// import Index from './views/Index';
 import Navbar from './components/Navbar';
 
 // import User from './views/User'
@@ -15,7 +14,7 @@ import Navbar from './components/Navbar';
 export default {
   name: 'App',
   components: {
-    Index,
+    // Index,
     Navbar
     // User
   }
