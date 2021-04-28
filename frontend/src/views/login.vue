@@ -1,25 +1,27 @@
 <template>
-  <div>
+  <div class="bg">
+  <link rel="stylesheet" href="style.css">
+
     <form class="box">
       <div class="field">
-        <label class="label">Email</label>
+        
         <div class="control">
           <input
             class="input"
             type="email"
-            placeholder="e.g. alex@example.com"
+            placeholder="Username"
           />
         </div>
       </div>
 
       <div class="field">
-        <label class="label">Password</label>
+        
         <div class="control">
-          <input class="input" type="password" placeholder="********" />
+          <input class="input" type="password" placeholder="Password" />
         </div>
       </div>
 
-      <button class="button is-primary">Sign in</button>
+      <button class="button is-primary">Log in</button>
     </form>
   </div>
 </template>
