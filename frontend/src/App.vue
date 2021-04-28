@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <Index></Index>
-  </div>
+
+    <router-view></router-view>
+    </div>
 </template>
 
 <script>
 import Index from './views/Index'
+// import User from './views/User'
 
 export default {
   name: 'App',
   components: {
-    Index
+    Index,
+    // User
   }
 }
 </script>
