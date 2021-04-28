@@ -1,15 +1,11 @@
 <template>
 <div>
-        <link rel="stylesheet" href="/frontend/css/reset.css">
-    <link rel="stylesheet" href="/frontend/css/style.css">
+
 <nav class="navbar"  role="navigation" aria-label="main navigation">
 
 
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <i class="fas fa-mug-hot"></i>
-    </a>
-
+ 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -17,37 +13,21 @@
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">
-        Home
+  <div id="navbar_tom" class="navbar-menu mt-2">
+    <div  class="navbar-start">
+      <a class="navbar-item button is-rounded is-medium">
+        Main
       </a>
 
-      <a class="navbar-item">
-        Documentation
+      <a class="navbar-item button is-rounded is-medium">
+        Our products 
       </a>
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
+        <a class="navbar-item button is-rounded is-medium">
+          Contact US
         </a>
 
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
-      </div>
+
     </div>
 
     <div class="navbar-end">
