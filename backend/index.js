@@ -1,13 +1,14 @@
 const express = require('express');
-<<<<<<< Updated upstream
-const path = require('path')
-const moment = require('moment')
-=======
 const path = require('path');
 const moment = require('moment');
 const cookie = require('cookie-session');
 const cors = require('cors')
->>>>>>> Stashed changes
+const path = require('path');
+const moment = require('moment');
+const cookie = require(cookie-session);
+const cors = require('cors')
+
+
 const app = express();
 
 app.use(cors())
