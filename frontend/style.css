@@ -1,0 +1,8 @@
+body {
+    background-image: url("coffee.jpg");
+    height: 900px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

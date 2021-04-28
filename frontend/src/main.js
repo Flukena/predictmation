@@ -5,7 +5,6 @@ import App from './App.vue'
 // import Index from './views/Index.vue'
 import User from './views/User.vue'
 import Login from './views/Login'
-import 'bulma/css/bulma.css'
 Vue.use(VueRouter);
 const routes =[
   {
