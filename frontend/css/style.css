@@ -40,8 +40,6 @@ a.navbar-item{
     background-color: rgb(134, 134, 134);
 }.button.navbar-item:hover{
     transition: all .1s;
-<<<<<<< HEAD
-
 
 }.navbar{
     font-family: NotoSans-Bold;
@@ -100,6 +98,38 @@ div .home_img{
 
 }.home_title h1:hover{
     font-size: 9rem;
-
 }
 
+.birthday {
+    font-family: Bahnschrift;
+}
+
+#birthday {
+    font-family: Bahnschrift;
+    background-color: rgb(146, 104, 26);
+    color: rgb(255, 255, 255);
+    
+    border-radius: 100cm;
+    border-color: rgb(255, 255, 255);
+    padding: 0.20em 0.5em;
+    font-size: 1rem;
+}
+
+.sex {
+    font-family: Bahnschrift;
+}
+
+#sex {
+    font-family: Bahnschrift;
+    background-color: rgb(146, 104, 26);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    border-color: rgb(255, 255, 255);
+    border-radius: 100cm;
+    padding: 0.45em 0.5em;
+    font-size: 1rem;
+}
+
+.br{
+    font-family: Bahnschrift;
+}

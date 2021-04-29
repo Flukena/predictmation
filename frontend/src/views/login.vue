@@ -1,6 +1,7 @@
 
   <template>
   <div class="column is-2 is-offset-5">
+    
     <form class="box">
       <label for="" class="for">For customers</label><br>
       <div class="column is-2"></div>
