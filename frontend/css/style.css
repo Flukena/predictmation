@@ -28,4 +28,6 @@ a.navbar-item{
     border-width: 8px;
     background-color: rgb(255, 239, 218);
     transition: all .1s;
+}.navbar{
+    font-family: NotoSans-Bold;
 }

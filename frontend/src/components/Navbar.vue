@@ -32,10 +32,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary is-rounded ">
+          <a class="button is-primary is-rounded is-medium has-background-link-dark">
             <strong>Sign up</strong>
           </a>
-          <a class="button is-light is-rounded ">
+          <a class="button is-light is-rounded is-medium">
             Log in
           </a>
         </div>
