@@ -45,17 +45,33 @@ const signupSchema = Joi.object({
   ages:Joi.number().required()
   
 });
+// async function  updateUser(cus_username, cus_password, cus_id){
+//   const conn = await pool.getConnection();
+//   await conn.beginTransaction();
+//   try{
+//     res.status(200).send('ok')
+//     updateUser(cus_username, cus_password, cus_id)
 
+//     conn.commit()
+//   }catch(err){
+//     conn.rollback()
+//     console.log(err)
+//     res.status(400).json(err.toString());
+//   }finally{
+//     conn.release()
+//   }
+// }
 router.post("/user/signup", async function (req, res, next) {
-
+  const conn = await pool.getConnection();
+  await conn.beginTransaction();
   try {
     await signupSchema.validateAsync(req.body, { aboutEarly: true });
+    
   } catch (err) {
 
     return res.status(400).json(err);
   }
-  const conn = await pool.getConnection();
-  await conn.beginTransaction();
+
   const cus_username = req.body.username
   const cus_password = await bcrypt.hash(req.body.password, 5)
   const cus_name = req.body.fullname
@@ -70,7 +86,12 @@ router.post("/user/signup", async function (req, res, next) {
       'VALUES (?, ?, ?, ?,  ?, ?)',
       [cus_name, cus_email, cus_phone, cus_sex, cus_birthday, cus_age]
       )
-      res.status(201).send('ok')
+      const cus_id = await conn.query('select cus_id from customer where cus_name = ?',[cus_name])
+      await conn.query('INSERT INTO cus_user(cus_username, cus_password, cus_id)' + 'VALUES(?,?,?)', [cus_username, cus_password, cus_id[0][0].cus_id])
+
+      res.status(200).send('ok')
+
+      conn.commit()
   }catch(err){
     conn.rollback()
     console.log(err)
