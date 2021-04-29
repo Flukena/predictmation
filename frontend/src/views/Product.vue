@@ -15,11 +15,11 @@
           </div>
           <div class="card-content">
             <div class="content">werewr</div>
-          </div>
-        </div>
-        <div id="butpro">
+          </div><div id="butpro">
         <button class="button is-success is-inverted" >Buy</button>
       </div>
+        </div>
+        
       </div>
       <div class="column">
         <div class="card" id="go">
@@ -34,10 +34,11 @@
           <div class="card-content">
             <div class="content">werewr</div>
           </div>
-        </div>
-        <div id="butpro">
+          <div id="butpro">
         <button class="button is-success is-inverted" >Buy</button>
       </div>
+        </div>
+        
       </div>
       <div class="column">
         <div class="card" id="go">
@@ -52,10 +53,11 @@
           <div class="card-content">
             <div class="content">werewr</div>
           </div>
-        </div>
-        <div id="butpro">
+          <div id="butpro">
         <button class="button is-success is-inverted" >Buy</button>
       </div>
+        </div>
+        
       </div>
       <div class="column">
         <div class="card" id="go">
@@ -69,11 +71,11 @@
           </div>
           <div class="card-content">
             <div class="content">werewr</div>
-          </div>
-        </div>
-        <div id="butpro">
+          </div><div id="butpro">
         <button class="button is-success is-inverted" >Buy</button>
       </div>
+        </div>
+        
       </div>
       
     </div>
@@ -90,11 +92,11 @@
           </div>
           <div class="card-content">
             <div class="content">werewr</div>
-          </div>
-        </div>
-        <div id="butpro">
+          </div><div id="butpro">
         <button class="button is-success is-inverted" >Buy</button>
       </div>
+        </div>
+        
       </div>
       <div class="column">
         <div class="card" id="go">
@@ -108,11 +110,11 @@
           </div>
           <div class="card-content">
             <div class="content">werewr</div>
-          </div>
-        </div>
-        <div id="butpro">
+          </div><div id="butpro">
         <button class="button is-success is-inverted" >Buy</button>
       </div>
+        </div>
+        
       </div>
       <div class="column">
         <div class="card" id="go">
@@ -126,11 +128,11 @@
           </div>
           <div class="card-content">
             <div class="content">werewr</div>
-          </div>
-        </div>
-        <div id="butpro">
+          </div> <div id="butpro">
         <button class="button is-success is-inverted" >Buy</button>
       </div>
+        </div>
+       
       </div>
       <div class="column">
         <div class="card" id="go">
@@ -144,11 +146,11 @@
           </div>
           <div class="card-content">
             <div class="content">werewr</div>
-          </div>
-        </div>
-        <div id="butpro">
+          </div><div id="butpro">
         <button class="button is-success is-inverted" >Buy</button>
       </div>
+        </div>
+        
       </div>
     </div>
     </div>
