@@ -1,4 +1,6 @@
 <template>
-        <div class="home_title">
-        <h1>Coffee shop</h1></div>
+<div class="home">
+        <div class="home_img"></div>
+            <div class="home_title">
+        <h1>Coffee shop</h1></div></div>
 </template>

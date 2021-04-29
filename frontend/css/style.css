@@ -11,7 +11,7 @@ nav .navbar-menu{
     margin-left: 5%;
 }
 nav{
-    height: 87px;
+    height: 80px;
 }.img{
     min-height: 87px;
     background-color: darkblue;
@@ -30,19 +30,29 @@ a.navbar-item{
 }.button.navbar-item:hover{
     transition: all .1s;
     width: 160px;
-}.home_title{
+}div .home_img{
 
-    font-size: 8rem;
-    font-family: FORTE;
-    height: 750px;
-    width: 100%;
-    background: url('../src/assets/img/groundwork-los-angeles-coffee-shops.jpg') no-repeat;
+    position: relative;
+    height: 650px;
+    width: 120%;
+    left: -20px;
+    background: url('../src/assets/img/coffee.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
     background-size: cover;
+    filter: blur(8px);
+    
+
 
 }.home_title h1{
     position: absolute;
+    text-shadow: 2px 2px 4px #999999;
+    color: white;
     left: 50%; 
     top: 50%; 
     transform: translate(-50%, -50%);
-    text-align: center; 
+    text-align: center;
+    font-size: 8rem;
+    font-family: FORTE;
+
 }
