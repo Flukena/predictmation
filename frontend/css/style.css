@@ -29,4 +29,12 @@ a.navbar-item{
     background-color: rgb(134, 134, 134);
 }.button.navbar-item:hover{
     transition: all .1s;
+}div.Main{
+    text-align: center;
+    font-family: FORTE;
+    font-size: 7rem;
+    position: absolute;
+    left: 50%; /* relative to nearest positioned ancestor or body element */
+    top: 50%; /*  relative to nearest positioned ancestor or body element */
+    transform: translate(-50%, -50%); 
 }
