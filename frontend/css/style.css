@@ -60,10 +60,45 @@ a.navbar-item{
     background-color: rgb(246, 228, 211); 
     padding: 1.6rem;
     position: absolute;
+    border-radius: 20px;
+    width: 350px;
     left: 50%; 
     transform: translate(-50%, 20%);
 
 }
+.boxEM {
+    background-color: rgb(0, 0, 0); 
+    padding: 1.6rem;
+    position: absolute;
+    border-radius: 20px;
+    width: 350px;
+    left: 50%; 
+    color: white;
+    transform: translate(-50%, 20%);
+
+}
+
+.boxbasket {
+    background-color: rgb(255, 255, 255); 
+    padding: 1.6rem;
+    position: absolute;
+    border-radius: 20px;
+    width: 60%;
+    height: 500px;
+    left: 50%; 
+    transform: translate(-50%, 20%);
+    border: 3px solid rgb(0, 0, 0);
+
+}
+
+.forbasket {
+    font-size: 300%;
+    font-family: FORTE;
+    min-width: 200px;
+    margin: 50px 50px;
+    color: black;
+}
+
 
 div .home_img{
     position: relative;
@@ -103,7 +138,7 @@ div .home_img{
     font-family: Bahnschrift;
     background-color: rgb(146, 104, 26);
     color: rgb(255, 255, 255);
-    
+    width: 205px;
     border-radius: 100cm;
     border-color: rgb(255, 255, 255);
     padding: 0.20em 0.5em;

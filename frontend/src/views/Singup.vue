@@ -37,6 +37,7 @@
       <form action="">
         <label for="" class="sex"></label>
         <select name="sex" id="sex">
+          <option value="nogender">No gender</option>
           <option value="male">Male</option>
           <option value="femail">Female</option>
         </select>
