@@ -190,3 +190,20 @@ div .home_img{
 .br{
     font-family: Bahnschrift;
 }
+
+.main {
+    margin-top: 80px;
+    font-family: Bahnschrift;
+    font-size: 20px;
+}
+
+#go {
+    margin: 20px;
+    
+}
+
+#butpro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
