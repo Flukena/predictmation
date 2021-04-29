@@ -19,7 +19,7 @@ nav{
 a.navbar-item{
     color: rgb(255, 181, 131);
 }a.navbar-item:hover{
-    color:  rgb(255, 171, 116);
+    color:  rgb(204, 127, 76);
 }
 .button.navbar-item{
     width: 150px;
@@ -30,6 +30,7 @@ a.navbar-item{
 }.button.navbar-item:hover{
     transition: all .1s;
     width: 160px;
+    border: 3px rgb(99, 72, 50) solid;
 }div .home_img{
 
     position: relative;
@@ -54,5 +55,9 @@ a.navbar-item{
     text-align: center;
     font-size: 8rem;
     font-family: FORTE;
+    transition: all 3s;
+
+}.home_title h1:hover{
+    font-size: 9rem;
 
 }
