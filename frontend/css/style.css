@@ -29,12 +29,20 @@ a.navbar-item{
     background-color: rgb(134, 134, 134);
 }.button.navbar-item:hover{
     transition: all .1s;
-}div.Main{
-    text-align: center;
+    width: 160px;
+}.home_title{
+
+    font-size: 8rem;
     font-family: FORTE;
-    font-size: 7rem;
+    height: 750px;
+    width: 100%;
+    background: url('../src/assets/img/groundwork-los-angeles-coffee-shops.jpg') no-repeat;
+    background-size: cover;
+
+}.home_title h1{
     position: absolute;
-    left: 50%; /* relative to nearest positioned ancestor or body element */
-    top: 50%; /*  relative to nearest positioned ancestor or body element */
-    transform: translate(-50%, -50%); 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: center; 
 }

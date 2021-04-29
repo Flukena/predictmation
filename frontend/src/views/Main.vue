@@ -1,5 +1,4 @@
 <template>
-<div class="Main container">
-    <h1>Coffee Shop</h1>
-    </div>
+        <div class="home_title">
+        <h1>Coffee shop</h1></div>
 </template>
