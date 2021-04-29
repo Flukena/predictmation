@@ -3,10 +3,10 @@ import VueRouter from 'vue-router'
 
 import 'bulma/css/bulma.css'
 import App from './App.vue'
-// import Index from './views/Index.vue'
 import User from './views/User.vue'
 // import Login from './views/Login'
 import Singup from './views/Singup'
+
 
 
 Vue.use(VueRouter);

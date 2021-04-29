@@ -1,10 +1,6 @@
-
-
 a.navbar-item, .navbar-link{
     margin-left: 1rem;
     font-family: Bahnschrift;
-
-}nav .navbar-menu{
 
 }nav .navbar-end{
         font-family: Bahnschrift;
@@ -40,6 +36,10 @@ a.navbar-item{
     background-color: rgb(134, 134, 134);
 }.button.navbar-item:hover{
     transition: all .1s;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 }.navbar{
     font-family: NotoSans-Bold;
@@ -70,8 +70,6 @@ a.navbar-item{
 }
 
 div .home_img{
-
-
     position: relative;
     height: 650px;
     width: 100%;
@@ -98,6 +96,7 @@ div .home_img{
 
 }.home_title h1:hover{
     font-size: 9rem;
+<<<<<<< Updated upstream
 }
 
 .birthday {
@@ -128,6 +127,33 @@ div .home_img{
     border-radius: 100cm;
     padding: 0.45em 0.5em;
     font-size: 1rem;
+=======
+    color:  rgb(121, 58, 24);
+    text-shadow: 2px 2px 4px #f0f0f0;
+}
+.Baskets{
+    float: left;
+    position: absolute;
+    left: 90%; 
+    top: 10%; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+}.Baskets span{
+    font-size: 1.5rem;
+
+    
+    font-family: Bahnschrift;
+}div.pro_img{
+    position: relative;
+    height: 650px;
+    width: 100%;
+    transform:scale(1.2);
+    background: url('../src/assets/img/coffee.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+    filter: blur(8px);
+>>>>>>> Stashed changes
 }
 
 .br{
