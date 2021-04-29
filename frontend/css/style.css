@@ -15,8 +15,14 @@ nav .navbar-menu{
 }
 nav .navbar-menu{
     margin-left: 5%;
+
 }nav {
     height: 87px;
+
+}
+nav{
+    height: 80px;
+
 }.img{
     min-height: 87px;
     background-color: darkblue;
@@ -34,6 +40,7 @@ a.navbar-item{
     background-color: rgb(134, 134, 134);
 }.button.navbar-item:hover{
     transition: all .1s;
+
 
 }.navbar{
     font-family: NotoSans-Bold;
@@ -63,7 +70,30 @@ a.navbar-item{
 
 }
 
+div .home_img{
+
+    position: relative;
+    height: 650px;
+    width: 100%;
+    transform:scale(1.1);
+    background: url('../src/assets/img/coffee.jpg');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+    filter: blur(8px);
+}
 
 
+.home_title h1{
+    position: absolute;
+    text-shadow: 2px 2px 4px #999999;
+    color: white;
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 8rem;
+    font-family: FORTE;
 
- 
+}
+
