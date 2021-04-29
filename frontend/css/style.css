@@ -195,6 +195,7 @@ div .home_img{
     margin-top: 80px;
     font-family: Bahnschrift;
     font-size: 20px;
+    
 }
 
 #go {
@@ -208,6 +209,3 @@ div .home_img{
     align-items: center;
 }
 
-.image {
-    src: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Facuisineth.com%2Frecipe%2Fapple-cinnamon-cake&psig=AOvVaw2JNPB2lcNuRN6UtQaq0ojL&ust=1619782141520000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKClk-6so_ACFQAAAAAdAAAAABBk");
-}
