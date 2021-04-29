@@ -34,8 +34,8 @@ a.navbar-item{
 
     position: relative;
     height: 650px;
-    width: 120%;
-    left: -20px;
+    width: 100%;
+    transform:scale(1.1);
     background: url('../src/assets/img/coffee.jpg');
     background-repeat: no-repeat;
     overflow: hidden;
