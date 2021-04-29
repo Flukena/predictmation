@@ -1,6 +1,31 @@
-
-  
-
 a.navbar-item, .navbar-link{
     margin-left: 1rem;
+    font-family: Bahnschrift;
+}nav .navbar-menu{
+    border-top: 20px;
+}
+nav .navbar-menu{
+    margin-left: 5%;
+}
+nav{
+    height: 87px;
+}
+a.navbar-item{
+    color: rgb(255, 181, 131);
+}a.navbar-item:hover{
+    color:  rgb(255, 171, 116);
+}
+.button.navbar-item{
+    width: 150px;
+
+    border-color: rgb(255, 171, 116);
+    border-style:  solid outset;
+    border-width: 4px;
+    background-color: rgb(255, 239, 218);
+}.button.navbar-item:hover{
+    border-color: rgb(255, 171, 116);
+    border-style:  solid outset;
+    border-width: 8px;
+    background-color: rgb(255, 239, 218);
+    transition: all .1s;
 }

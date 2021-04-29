@@ -14,20 +14,18 @@
     </a>
   </div>
 
-  <div id="navbar_tom" class="navbar-menu mt-2">
-    <div  class="navbar-start">
-      <a class="navbar-item button is-rounded is-medium">
+  <div  class="navbar-menu">
+    <div  class="navbar-start mt-4">
+      <a  class="navbar-item button is-rounded is-medium">
         Main
       </a>
-
-      <a class="navbar-item button is-rounded is-medium">
+      <a  class="navbar-item button is-rounded is-medium">
         Our products 
       </a>
 
-        <a class="navbar-item button is-rounded is-medium">
+        <a  class="navbar-item button is-rounded is-medium">
           Contact US
-        </a>
-
+        </a>  
 
     </div>
 
@@ -44,5 +42,7 @@
       </div>
     </div>
   </div>
-</nav></div>
+</nav>
+</div>
+
 </template>
