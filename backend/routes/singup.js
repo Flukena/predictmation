@@ -18,21 +18,19 @@ const passwordValidator = (value, helpers) => {
 };
 
 const usernameValidator = async (value, helpers) => {
-  const [
-    rows,
-    _,
-  ] = await pool.query(
-    "SELECT username FROM `cus_user` WHERE cus_username = ?",
+  const [rows, _] = await pool.query(
+    "SELECT cus_username FROM sql_cafe.cus_user WHERE cus_username = ?",
     [value]
-  );
-  if (rows.length > 0) {
-    const message = "This user is already taken";
+)
+console.log(value)
 
-    throw new Joi.ValidationError(message, { message });
-  }
+if (rows.length > 0) {
 
-  return value;
-  
+    const message = 'This user is already taken'
+    throw new Joi.ValidationError(message, { message })
+}
+
+return value
 };
 
 const signupSchema = Joi.object({
@@ -41,13 +39,14 @@ const signupSchema = Joi.object({
   fullname: Joi.string().required().max(300),
   password: Joi.string().required().custom(passwordValidator),
   confirm_password: Joi.string().required().valid(Joi.ref('password')),
-  username: Joi.string().required().min(5).external(usernameValidator),
   sex: Joi.any().allow("male", "female", "no").required(),
   birth: Joi.string().required(),
+  username: Joi.string().required().external(usernameValidator),
+  ages:Joi.number().required()
+  
 });
 
-router.post("/user/singup", async function (req, res, next) {
-  console.log(req.body)
+router.post("/user/signup", async function (req, res, next) {
 
   try {
     await signupSchema.validateAsync(req.body, { aboutEarly: true });
@@ -64,13 +63,13 @@ router.post("/user/singup", async function (req, res, next) {
   const cus_phone = req.body.mobile
   const cus_sex = req.body.sex
   const cus_birthday = req.body.birth
+  const cus_age = req.body.ages
   try{
     await conn.query(
-      'INSERT INTO customer(cus_name, cus_email, cus_phone, cus_sex, cus_birthday) ' +
-      'VALUES (?, ?, ?, ?,  ?)',
-      [cus_name, cus_email, cus_phone, cus_sex, cus_birthday]
+      'INSERT INTO customer(cus_name, cus_email, cus_phone, cus_sex, cus_birthday, cus_age) ' +
+      'VALUES (?, ?, ?, ?,  ?, ?)',
+      [cus_name, cus_email, cus_phone, cus_sex, cus_birthday, cus_age]
       )
-    await conn.query('INSERT INTO')
       res.status(201).send('ok')
   }catch(err){
     conn.rollback()
