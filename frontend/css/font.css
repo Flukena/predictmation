@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Bahnschrift;
+    src: url(/frontend/src/assets/font/Bahnschrift.ttf);
+  }
+  @font-face {
+    font-family: FORTE;
+    src: url(/frontend/src/assets/font/FORTE.ttf);
+  }
+  @font-face {
+    font-family: NotoSans-Bold;
+    src: url(/frontend/src/assets/font/NotoSans-Bold.ttf);
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: NotoSans-Regular;
+    src: url(/frontend/src/assets/font/NotoSans-Regular.ttf);
+  }

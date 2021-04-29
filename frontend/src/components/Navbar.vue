@@ -1,3 +1,4 @@
+
 <template>
 <div>
 
@@ -33,10 +34,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <a class="button is-primary is-rounded ">
             <strong>Sign up</strong>
           </a>
-          <a class="button is-light">
+          <a class="button is-light is-rounded ">
             Log in
           </a>
         </div>
