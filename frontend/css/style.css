@@ -1,6 +1,23 @@
 
-  
-
 a.navbar-item, .navbar-link{
     margin-left: 1rem;
+}
+
+.for {
+    font-size: 200%;
+    font-family: FORTE;
+    src: url(/frontend/src/assets/font/FORTE.ttf);
+}
+
+
+.checkbox {
+    font-family: NotoSans-Regular;
+    src: url(/frontend/src/assets/font/NotoSans-Regular.ttf);
+}
+
+
+.box {
+    
+    background-color: rgb(246, 228, 211); 
+    padding: 1.6rem
 }
