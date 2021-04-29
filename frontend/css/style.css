@@ -209,3 +209,14 @@ div .home_img{
     align-items: center;
 }
 
+.footer {
+    background-image: linear-gradient(to right, rgba(255, 218, 170, 0), rgb(219, 139, 48));
+    border-color: rgb(0, 0, 0);
+}
+
+.contact, .contact2 {
+    font-family: Bahnschrift;
+    text-shadow: 1px 1px #be5e10;
+    font-size: 20px;
+}
+.contact2:hover {font-size:200%;}

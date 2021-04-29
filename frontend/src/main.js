@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import 'bulma/css/bulma.css'
 import App from './App.vue'
 import User from './views/User.vue'
-import Product from './views/Product'
+import Singup from './views/Singup.vue'
 
 
 
@@ -14,7 +14,7 @@ const routes =[
   {
     name: 'non',
     path: '/non',
-    component:Product
+    component:Singup
   },
   {
     name: 'user',
