@@ -3,7 +3,6 @@
     <styles></styles>
     <reset></reset>
     <Navbar></Navbar>
-    <Product></Product>
     <router-view></router-view>
     </div>
 </template>
@@ -13,7 +12,6 @@
 import styles from '../css/style.css'
 import reset from '../css/reset.css'
 import Navbar from './components/Navbar'; 
-import Product from './views/Product'
 
 // import User from './views/User'
 
@@ -23,7 +21,6 @@ export default {
     // Index,
     Navbar,
     // User
-    Product,
     styles,
     reset
   }

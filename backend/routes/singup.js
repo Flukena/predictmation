@@ -27,9 +27,12 @@ const usernameValidator = async (value, helpers) => {
   );
   if (rows.length > 0) {
     const message = "This user is already taken";
+
     throw new Joi.ValidationError(message, { message });
   }
+
   return value;
+  
 };
 
 const signupSchema = Joi.object({
@@ -37,16 +40,19 @@ const signupSchema = Joi.object({
   mobile: Joi.string().required().pattern(/0[0-9]{9}/),
   fullname: Joi.string().required().max(300),
   password: Joi.string().required().custom(passwordValidator),
-  confirm_password: Joi.string().required().valid(Joi.ref("password")),
+  confirm_password: Joi.string().required().valid(Joi.ref('password')),
   username: Joi.string().required().min(5).external(usernameValidator),
   sex: Joi.any().allow("male", "female", "no").required(),
   birth: Joi.string().required(),
 });
 
 router.post("/user/singup", async function (req, res, next) {
+  console.log(req.body)
+
   try {
-    await signupSchema.validateAsync(req.body, { aboutEarly: false });
+    await signupSchema.validateAsync(req.body, { aboutEarly: true });
   } catch (err) {
+
     return res.status(400).json(err);
   }
   const conn = await pool.getConnection();
@@ -61,7 +67,7 @@ router.post("/user/singup", async function (req, res, next) {
   try{
     await conn.query(
       'INSERT INTO customer(cus_name, cus_email, cus_phone, cus_sex, cus_birthday) ' +
-      'VALUES (?, ?, ?, ?, ?)',
+      'VALUES (?, ?, ?, ?,  ?)',
       [cus_name, cus_email, cus_phone, cus_sex, cus_birthday]
       )
     await conn.query('INSERT INTO')
