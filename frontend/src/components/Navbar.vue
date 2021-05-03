@@ -1,6 +1,7 @@
 <template>
   <div style="background-img">
     <nav class="navbar" role="navigation" aria-label="main navigation">
+
       <div class="navbar-brand">
         <a
           role="button"
@@ -31,21 +32,16 @@
 
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="buttons">
-              <router-link to="/user/singup">
-                <a
-                  class="button  is-rounded is-medium"
-                  style="background:#9A5648; color:white"
-                >
-                  <strong>Sign up</strong>
-                </a></router-link
-              >
 
-              <router-link to="/user/login">
-                <a class="button is-light is-rounded is-medium">
-                  Log in
-                </a></router-link
-              >
+            <div class="buttons"><router-link to="/user/signup">
+              <a class="button  is-rounded is-medium" style="background:#9A5648; color:white">
+                
+                <strong>Sign up</strong>
+              </a></router-link><router-link to="/user/login">
+              <a class="button is-light is-rounded is-medium">
+
+                Log in
+              </a></router-link>
             </div>
           </div>
         </div>
