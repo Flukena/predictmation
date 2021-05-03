@@ -119,20 +119,21 @@ export default {
           firstname: this.firstname,
           lastname: this.lastname,
           sex:this.sex,
-          birth:this.birth
-
-
+          birth:this.birth,
+          age:this.age
 
         };
 
         axios
-          .post("http://localhost:3000/user/signup", data)
+          .post("http://localhost:3000/user/singup", data)
           .then((res) => {
             alert("Sign up Success");
             res.status(200)
           })
           .catch((err) => {
+            console.log(data)
             alert(err.response.data.details.message)
+            console.log(err)
           });
       }
     },

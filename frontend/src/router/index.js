@@ -24,8 +24,12 @@ const routes = [
     {
       path:'/product',
       name:'product',
-      component:()=>('../views/Product.vue')
-    },
+      component:()=>import('../views/Product.vue')
+    },{
+      path:'/emplogin',
+      name:'emp',
+      component:() =>import('../views/Loginemp.vue')
+    }
   ]
   
   const router = new VueRouter({ routes })
