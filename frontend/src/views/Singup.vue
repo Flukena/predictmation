@@ -6,38 +6,38 @@
 
       <div class="field">
         <div class="control">
-          <input class="input" type="username" placeholder="Username" />
+          <input class="input" type="text" v-model="username" placeholder="Username" />
         </div>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="password" placeholder="Password" />
+          <input class="input" type="password" v-model="password" placeholder="Password" />
         </div>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="confirmpassword" placeholder="Confirm Password" />
+          <input class="input" type="password" v-model="confirm_password" placeholder="Confirm Password" />
         </div>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="firstname" placeholder="Firstname" />
+          <input class="input" type="text" v-model="firstname" placeholder="Firstname" />
         </div>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="lastname" placeholder="Lastname" />
+          <input class="input" type="text" v-model="lastname" placeholder="Lastname" />
         </div>
       </div>
 
-      <form action="">
-        <label for="" class="sex"></label>
-        <select name="sex" id="sex">
-          <option value="nogender">No gender</option>
+      <form >
+        <label for="sex" class="sex"></label>
+        <select name="sex" v-model="sex" id="sex">
+          <option value="no">No gender</option>
           <option value="male">Male</option>
           <option value="femail">Female</option>
         </select>
@@ -46,24 +46,130 @@
 
       <div class="field">
         <div class="control">
-          <input class="input" type="phone" placeholder="Phone" />
+          <input class="input" type="number" v-model="mobile" placeholder="Phone" />
         </div>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="email" placeholder="Email" />
+          <input class="input" type="email" v-model="email" placeholder="Email" />
         </div>
       </div>
-
+            <div class="field">
+        <div class="control">
+          <input class="input" type="number" v-model="age" placeholder="Age" />
+        </div>
+      </div>
       <form action="">
           <label for="" class="br">Date of birth </label>
-        <input type="date" id="birthday" name="birthday"/>
+        <input type="date" v-model="birth" id="birthday" name="birthday"/>
       </form>
 
       <div class="column is-2"></div>
-      <button class="button is-black" style="width: 100%">Sing up</button>
+      <button class="button is-black" style="width: 100%" @click="submit()">Sing up</button>
     </form>
 
   </div>
 </template>
+<script>
+import axios from '@/plugins/axios'
+import {
+  required,
+  email,
+  helpers,
+  minLength,
+  maxLength,
+  sameAs,
+} from "vuelidate/lib/validators";
+
+function mobile(value) {
+  return !helpers.req(value) || !!value.match(/0[0-9]{9}/);
+}
+
+function complexPassword(value) {
+  if (!(value.match(/[a-z]/) && value.match(/[A-Z]/) && value.match(/[0-9]/))) {
+    return false;
+  }
+  return true;
+}
+
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+      confirm_password: "",
+      email: "",
+      mobile: "",
+      sex:"",
+      firstname: "",
+      lastname: "",
+      birth:"",
+      age:""
+    };
+  },
+  methods: {
+    submit() {
+      // Validate all fields
+      this.$v.$touch();
+
+      // เช็คว่าในฟอร์มไม่มี error
+      if (!this.$v.$invalid) {
+        let data = {
+          username: this.username,
+          password: this.password,
+          confirm_password: this.confirm_password,
+          email: this.email,
+          mobile: this.mobile,
+          firstname: this.firstname,
+          lastname: this.lastname,
+          sex:this.sex,
+          birth:this.birth
+
+
+
+        };
+
+        axios
+          .post("http://localhost:3000/user/signup", data)
+          .then((res) => {
+            alert("Sign up Success");
+            res.status(200)
+          })
+          .catch((err) => {
+            alert(err.response.data.details.message)
+          });
+      }
+    },
+  },
+  validations: {
+    email: {
+      required: required,
+      email: email,
+    },
+    mobile: {
+      required: required,
+      mobile: mobile,
+    },
+    password: {
+      required: required,
+      minLength: minLength(8),
+      complex: complexPassword,
+    },
+    confirm_password: {
+      sameAs: sameAs("password"),
+    },
+    username: {
+      required: required,
+      minLength: minLength(5),
+      maxLength: maxLength(20),
+    },
+    firstname: {
+      required: required,
+    },
+    lastname: {
+      required: required,
+    },
+  },
+};
+</script>

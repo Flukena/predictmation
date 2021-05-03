@@ -20,7 +20,12 @@ const routes = [
       path:'/user/singup',
       name:'singup',
       component:()=> import('../views/Singup.vue')
-    }
+    },
+    {
+      path:'/product',
+      name:'product',
+      component:()=>('../views/Product.vue')
+    },
   ]
   
   const router = new VueRouter({ routes })

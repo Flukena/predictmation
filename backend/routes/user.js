@@ -36,7 +36,8 @@ return value
 const signupSchema = Joi.object({
   email: Joi.string().required().email(),
   mobile: Joi.string().required().pattern(/0[0-9]{9}/),
-  fullname: Joi.string().required().max(300),
+  firstname: Joi.string().required().max(150),
+  lastname: Joi.string().required().max(150),
   password: Joi.string().required().custom(passwordValidator),
   confirm_password: Joi.string().required().valid(Joi.ref('password')),
   sex: Joi.any().allow("male", "female", "no").required(),
@@ -109,7 +110,6 @@ router.post('/user/login', async (req, res, next)=> {
   try{
     await loginSchema.validateAsync(req.body, {abortEarly:false})
   }catch(err){
-    console.log(req, ' 1', req)
 
     return res.status(400).send(err)
     
@@ -151,5 +151,7 @@ router.post('/user/login', async (req, res, next)=> {
 
 });
 
-
+router.get('/user/me', isLoggedIn, async (req, res, next) => {
+  res.json(req.user)
+})
 exports.router = router;

@@ -43,8 +43,14 @@
         </div>
 
         <div class="column">
-          <img style= "display: block; margin-left: auto; margin-right: auto; height: 250px"
-          src="http://www.clker.com/cliparts/J/C/X/z/E/s/shopping-cart-hi.png"
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              height: 250px;
+            "
+            src="http://www.clker.com/cliparts/J/C/X/z/E/s/shopping-cart-hi.png"
           />
         </div>
       </div>
