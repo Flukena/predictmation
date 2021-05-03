@@ -1,25 +1,12 @@
 a.navbar-item, .navbar-link{
     margin-left: 1rem;
     font-family: Bahnschrift;
-    background-image: linear-gradient(to top, rgb(228, 162, 22), rgb(70, 37, 11));
 
-    
-
-}
-#singup {
-    background-image: linear-gradient(to bottom, rgb(59, 54, 49),rgb(118, 129, 18));
-}
-
-#login {
-    background-image: linear-gradient(to top, rgb(231, 231, 231),rgb(220, 226, 166));
-    color: black;
-    font-weight: 1000;
-}
-nav .navbar-end{
+}nav .navbar-end{
         font-family: Bahnschrift;
-        
 }
 nav .navbar-menu{
+
     border-top: 20px;
 }
 nav .navbar-menu{
@@ -35,14 +22,11 @@ nav{
 }.img{
     min-height: 87px;
     background-color: darkblue;
-    
 }
 a.navbar-item{
     color: rgb(255, 181, 131);
 }a.navbar-item:hover{
-    color:  rgb(0, 0, 0);
-    font-size: 21px;
-    font-family: FORTE;
+    color:  rgb(204, 127, 76);
 }
 .button.navbar-item{
     width: 150px;
@@ -77,7 +61,7 @@ a.navbar-item{
     padding: 1.6rem;
     position: absolute;
     border-radius: 20px;
-    width: 700px;
+    width: 350px;
     left: 50%; 
     transform: translate(-50%, 20%);
 
@@ -96,7 +80,7 @@ a.navbar-item{
 
 .boxbasket {
     background-color: rgb(255, 255, 255); 
-    padding: 3rem;
+    padding: 1.6rem;
     position: absolute;
     border-radius: 20px;
     width: 60%;
@@ -185,7 +169,6 @@ div .home_img{
     top: 10%; 
     transform: translate(-50%, -50%);
     text-align: center;
-    
 }.Baskets span{
     font-size: 1.5rem;
 
@@ -226,49 +209,14 @@ div .home_img{
     align-items: center;
 }
 
-
-
-.choose {
-    font-family: Bahnschrift;
-    font-size: 30px;
-    margin: 20%;
-}
-
-.pay {
-    font-family: Bahnschrift;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    width: 50%;
-    border-color: rgb(255, 255, 255);
-    border-radius: 100cm;
-    margin-left: 25%;
-    padding: 0.45em 0.5em;
-    font-size: 1rem;
-}
-
-.butpay {
-    margin-left: 45%;
-}
-.total {
-    font-family: Bahnschrift;
-    font-size: 20px;
-}
-
 .footer {
-    background-image: linear-gradient(to right, rgb(190, 142, 38), rgb(88, 47, 13));
+    background-image: linear-gradient(to right, rgba(255, 218, 170, 0), rgb(219, 139, 48));
     border-color: rgb(0, 0, 0);
-    padding-bottom: 50px;
 }
 
-#about {
+.contact, .contact2 {
     font-family: Bahnschrift;
-    font-weight: 1000;
+    text-shadow: 1px 1px #be5e10;
     font-size: 20px;
 }
-
-#material {
-    font-family: Bahnschrift;
-    font-weight: 350;
-    letter-spacing: 0.2px;
-    line-height: 25px;
-}
+.contact2:hover {font-size:200%;}
