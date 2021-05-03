@@ -1,7 +1,7 @@
   <template>
   <div class="column is-2 is-offset-5">
-    <form class="box">
-      <label for="" class="for">Become a member</label><br />
+    <form class="box" style="margin-top:-60px; width:22%">
+      <label for="" class="for" style="font-size: 40px; margin-left: 10%;">Become a member</label><br />
       <div class="column is-2"></div>
 
       <div class="field">
@@ -37,9 +37,9 @@
       <form >
         <label for="sex" class="sex"></label>
         <select name="sex" v-model="sex" id="sex">
-          <option value="no">No gender</option>
-          <option value="male">Male</option>
-          <option value="femail">Female</option>
+          <option value="" style="color: black;">Choose gender</option>
+          <option value="male" style="color: black;">Male</option>
+          <option value="femail" style="color: black;">Female</option>
         </select>
         <br /><br />
       </form>
@@ -55,14 +55,9 @@
           <input class="input" type="email" v-model="email" placeholder="Email" />
         </div>
       </div>
-            <div class="field">
-        <div class="control">
-          <input class="input" type="number" v-model="age" placeholder="Age" />
-        </div>
-      </div>
       <form action="">
           <label for="" class="br">Date of birth </label>
-        <input type="date" v-model="birth" id="birthday" name="birthday"/>
+        <input style="width: 100%; margin-top:10px; background-image: linear-gradient(to top, rgb(27, 27, 27), rgb(177, 131, 78));" type="date" v-model="birth" id="birthday" name="birthday" value="asdas"/>
       </form>
 
       <div class="column is-2"></div>
@@ -172,4 +167,5 @@ export default {
     },
   },
 };
+
 </script>

@@ -175,7 +175,7 @@ div .home_img{
 
 #sex {
     font-family: Bahnschrift;
-    background-color: rgb(146, 104, 26);
+    background-image: linear-gradient(to top, rgb(27, 27, 27), rgb(177, 131, 78));
     color: rgb(255, 255, 255);
     width: 100%;
     border-color: rgb(255, 255, 255);
@@ -213,6 +213,7 @@ div .home_img{
 
 .br{
     font-family: Bahnschrift;
+    
 }
 
 .main {
