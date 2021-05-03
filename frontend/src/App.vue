@@ -11,7 +11,7 @@
 
     <router-view :key="$route.fullPath" @auth-change="onAuthChange" :user="user" />
     <!-- <Footer></Footer> -->
-
+    <Singup></Singup>
     </div>
 </template>
 
@@ -37,10 +37,10 @@ export default {
     Navbar,
 
     // User
-    styles,
+    Styles,
     // Footer,
     login,
-    reset
+    Reset,
 
     Singup
     // Footer,
