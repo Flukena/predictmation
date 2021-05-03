@@ -2,7 +2,7 @@ const express = require("express");
 const pool = require("../config");
 const Joi = require("joi");
 const { generateToken } = require("../utils/token");
-
+const {isLoggedIn} = require('../middlewares')
 router = express.Router();
 const bcrypt = require("bcrypt");
 
@@ -149,6 +149,7 @@ router.post('/user/login', async (req, res, next)=> {
     conn.release()
   }
 
-})
+});
+
 
 exports.router = router;

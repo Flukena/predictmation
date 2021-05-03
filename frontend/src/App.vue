@@ -1,11 +1,7 @@
 <template>
   <div id="app" style="height:-100px">
-    <styles></styles>
-    <reset></reset>
     <Navbar></Navbar>
-    <Footer></Footer>
-    <router-view></router-view>
-    
+    <router-view :key="$route.fullPath" @auth-change="onAuthChange" :user="user" />
     </div>
 </template>
 
@@ -17,7 +13,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer'; 
 
 // import User from './views/User'
-
+import axios from '@/plugins/axios'
 export default {
   name: 'App',
   components: {
@@ -27,6 +23,10 @@ export default {
     styles,
     Footer,
     reset
+  },data(){
+    return{
+      user:null
+    }
   }
 }
 
