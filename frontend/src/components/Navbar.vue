@@ -33,7 +33,7 @@
 
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="buttons" ><router-link to="/user/signup">
+            <div class="buttons" ><router-link to="/user/singup">
               <a class="button  is-rounded is-medium" id="singlog">
                 
                 <strong>Sign up</strong>
