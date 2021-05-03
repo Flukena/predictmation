@@ -9,7 +9,7 @@
 import '../css/style.css'
 import '../css/reset.css'
 import Navbar from './components/Navbar'; 
-import axios from '@/plugins/axios'
+import axios from "@/plugins/axios";
 export default {
   name: 'App',
   components: {

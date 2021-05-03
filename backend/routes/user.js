@@ -75,7 +75,8 @@ router.post("/user/singup", async function (req, res, next) {
 
   const cus_username = req.body.username
   const cus_password = await bcrypt.hash(req.body.password, 5)
-  const cus_name = req.body.fullname
+  const cus_firstname = req.body.firstname
+  const cus_lastname = req.body.lastname
   const cus_email = req.body.email
   const cus_phone = req.body.mobile
   const cus_sex = req.body.sex
@@ -83,11 +84,11 @@ router.post("/user/singup", async function (req, res, next) {
   const cus_age = req.body.age
   try{
     await conn.query(
-      'INSERT INTO customer(cus_name, cus_email, cus_phone, cus_sex, cus_birthday, cus_age) ' +
-      'VALUES (?, ?, ?, ?,  ?, ?)',
-      [cus_name, cus_email, cus_phone, cus_sex, cus_birthday, cus_age]
+      'INSERT INTO customer(cus_firstname, cus_lastname, cus_email, cus_phone, cus_sex, cus_birthday, cus_age) ' +
+      'VALUES (?, ?, ?, ?, ?,  ?, ?)',
+      [cus_firstname, cus_lastname, cus_email, cus_phone, cus_sex, cus_birthday, cus_age]
       )
-      const cus_id = await conn.query('select cus_id from customer where cus_name = ?',[cus_name])
+      const cus_id = await conn.query('select cus_id from customer where cus_email = ?',[cus_email])
       await conn.query('INSERT INTO cus_user(cus_username, cus_password, cus_id)' + 'VALUES(?,?,?)', [cus_username, cus_password, cus_id[0][0].cus_id])
 
       res.status(200).send('ok')

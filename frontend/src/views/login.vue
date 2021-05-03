@@ -48,8 +48,7 @@
               display: block;
               margin-left: auto;
               margin-right: auto;
-              height: 250px;
-            "
+              height: 250px;"
             src="http://www.clker.com/cliparts/J/C/X/z/E/s/shopping-cart-hi.png"
           />
         </div>
@@ -75,15 +74,15 @@ export default {
       };
       axios
         .post("http://localhost:3000/user/login/", data)
-        .than((res) => {
+        .then((res) => {
           const token = res.data.token;
           localStorage.setItem("token", token);
           this.$emit("auth-change");
-          this.$router({ push: "/" });
+          this.$router.push({path:"/" });
         })
         .catch((error) => {
-          this.error = error.response.data;
-          console.log(error.response.data);
+          this.error = error.response;
+          console.log(error);
         });
     },
   },
