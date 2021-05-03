@@ -43,22 +43,9 @@
                 Log in
               </a></router-link>
 
-            <div class="buttons">
-              <router-link to="/user/singup">
-                <a
-                  class="button  is-rounded is-medium"
-                  style="background:#9A5648; color:white"
-                >
-                  <strong>Sign up</strong>
-                </a></router-link
-              ><router-link to="/user/login">
-                <a class="button is-light is-rounded is-medium">
-                  Log in
-                </a></router-link
-              >
-            </div>
+
           </div>
-        </div>
+        </div></div>
       </div>
     </nav>
   </div>
