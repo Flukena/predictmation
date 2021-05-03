@@ -60,7 +60,7 @@
 <script>
 import axios from "@/plugins/axios";
 export default {
-  setup() {
+  data() {
     return {
       username: "",
       password: "",
