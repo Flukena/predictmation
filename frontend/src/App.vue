@@ -5,6 +5,7 @@
     <Navbar></Navbar>
     <router-view :key="$route.fullPath" @auth-change="onAuthChange" :user="user" />
     <!-- <Footer></Footer> -->
+    <Singup></Singup>
     </div>
 </template>
 
