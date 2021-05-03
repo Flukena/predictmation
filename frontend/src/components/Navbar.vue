@@ -33,12 +33,12 @@
         <div class="navbar-end">
           <div class="navbar-item">
 
-            <div class="buttons"><router-link to="/user/signup">
-              <a class="button  is-rounded is-medium" style="background:#9A5648; color:white">
+            <div class="buttons" ><router-link to="/user/signup">
+              <a class="button  is-rounded is-medium" id="singlog">
                 
                 <strong>Sign up</strong>
               </a></router-link><router-link to="/user/login">
-              <a class="button is-light is-rounded is-medium">
+              <a class="button  is-rounded is-medium" id="singlog2"  style="margin-left: 15px">
 
                 Log in
               </a></router-link>

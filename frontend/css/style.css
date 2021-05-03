@@ -1,12 +1,11 @@
 a.navbar-item, .navbar-link{
     margin-left: 1rem;
     font-family: Bahnschrift;
-    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(167, 97, 17));
+    background-image: linear-gradient(to top, rgb(116, 79, 24), rgb(206, 164, 50));
     color: white;
     
 }nav .navbar-end{
-        font-family: Bahnschrift;
-        
+    font-family: Bahnschrift;
 }
 nav .navbar-menu{
     
@@ -17,8 +16,28 @@ nav .navbar-menu{
 
 }nav {
     height: 87px;
-
 }
+#singlog {
+    background-image: linear-gradient(to bottom, rgb(203, 240, 102), rgb(150, 135, 119));
+    color: balck;
+    font-weight: 1000;
+}
+#singlog:hover {
+    background-image: linear-gradient(to bottom, rgb(86, 112, 59), rgb(150, 135, 119));
+    color: rgb(243, 213, 169);
+    font-family: FORTE;
+}
+#singlog2 {
+    background-image: linear-gradient(to bottom, rgb(253, 253, 253), rgb(119, 115, 110));
+    color: balck;
+    font-weight: 1000;
+}
+#singlog2:hover {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(201, 194, 186));
+    color: rgb(119, 119, 119);
+    font-family: FORTE;
+}
+
 nav{
     height: 80px;
 
@@ -215,8 +234,12 @@ div .home_img{
 }
 
 .footer {
-    background-image: linear-gradient(to right, rgba(255, 218, 170, 0), rgb(219, 139, 48));
-    
+    background-image: linear-gradient(to right, rgb(216, 190, 76), rgb(63, 38, 10));
+    font-family: Bahnschrift;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    font-size: 15px;
+    color: white;
 }
 
 .contact, .contact2 {
