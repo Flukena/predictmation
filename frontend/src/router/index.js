@@ -20,6 +20,19 @@ const routes = [
       path:'/user/singup',
       name:'singup',
       component:()=> import('../views/Singup.vue')
+    },
+    {
+      path:'/product',
+      name:'product',
+      component:()=>('../views/Product.vue')
+    },{
+      path:'/basket',
+      name:'basket',
+      component:()=>('../views/Basket.vue')
+    },{
+      path:'/user/loginemp',
+      name:'emp',
+      component:()=>('../views/LoginEmp.vue')
     }
   ]
   

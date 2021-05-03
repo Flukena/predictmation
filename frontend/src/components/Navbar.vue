@@ -17,9 +17,10 @@
 
       <div class="navbar-menu">
         <div class="navbar-start mt-4">
+         <router-link to="/"> 
           <a class="navbar-item button is-rounded is-medium">
             Main
-          </a>
+          </a></router-link>
           <a class="navbar-item button is-rounded is-medium">
             Our products
           </a>
@@ -44,8 +45,7 @@
               <router-link to="/user/login">
                 <a class="button is-light is-rounded is-medium">
                   Log in
-                </a></router-link
-              >
+                </a></router-link>
             </div>
           </div>
         </div>
