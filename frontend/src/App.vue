@@ -4,7 +4,7 @@
     <Styles></Styles>
     <Navbar></Navbar>
     <router-view :key="$route.fullPath" @auth-change="onAuthChange" :user="user" />
-    <Footer></Footer>
+    <!-- <Footer></Footer> -->
     </div>
 </template>
 
@@ -13,8 +13,7 @@
 import Styles from '../css/style.css'
 import Reset from '../css/reset.css'
 import Navbar from './components/Navbar'; 
-import Footer from './components/Footer'; 
-
+// import Footer from './components/Footer'; 
 // import User from './views/User'
 import axios from '@/plugins/axios'
 export default {
@@ -23,7 +22,7 @@ export default {
     Reset,
     Styles,
     Navbar,
-    Footer,
+    // Footer,
   },data(){
     return{
       user:null

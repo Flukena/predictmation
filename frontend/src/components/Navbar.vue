@@ -34,7 +34,7 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <router-link to="/user/signup">
+              <router-link to="/user/singup">
                 <a
                   class="button  is-rounded is-medium"
                   style="background:#9A5648; color:white"

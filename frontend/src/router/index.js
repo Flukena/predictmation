@@ -25,15 +25,7 @@ const routes = [
       path:'/product',
       name:'product',
       component:()=>('../views/Product.vue')
-    },{
-      path:'/basket',
-      name:'basket',
-      component:()=>('../views/Basket.vue')
-    },{
-      path:'/user/loginemp',
-      name:'emp',
-      component:()=>('../views/LoginEmp.vue')
-    }
+    },
   ]
   
   const router = new VueRouter({ routes })
