@@ -28,7 +28,7 @@ const routes = [
     },{
       path:'/emplogin',
       name:'emp',
-      component:() =>import('../views/Loginemp.vue')
+      component:() =>import('../views/LoginEmp')
     }
   ]
   
