@@ -8,13 +8,13 @@
       
       <div class="field">
         <div class="control">
-          <input class="input" type="email" placeholder="Username" />
+          <input class="input" type="username" v-model="username" placeholder="Username" />
         </div>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="password" placeholder="Password" />
+          <input class="input" type="password" v-model="password" placeholder="Password" />
         </div>
       </div>
       
@@ -51,6 +51,9 @@ export default {
           localStorage.setItem('token', token)
           this.$emit('auth-change')
           this.$router({push:'/'})
+      }).catch(error =>{
+        this.error = error.response.data
+        console.log(error.response.data)
       })
     }
   }

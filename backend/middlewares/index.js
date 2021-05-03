@@ -1,3 +1,4 @@
+const pool = require("../config");
 async function logger (req, res, next) {
         const timestamp = new Date().toISOString().substring(0, 19)
         console.log(`${timestamp} | ${req.method}: ${req.originalUrl}`)

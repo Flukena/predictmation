@@ -1,30 +1,17 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-
+import router from './router'
 import 'bulma/css/bulma.css'
 import App from './App.vue'
-import User from './views/User.vue'
-import Singup from './views/Singup.vue'
+import Vuevlidate from 'vuelidate'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+library.add(fas)
 
+Vue.component('icon', FontAwesomeIcon)
 
-
-Vue.use(VueRouter);
-const routes =[
-  {
-    name: 'non',
-    path: '/non',
-    component:Singup
-  },
-  {
-    name: 'user',
-    path: '/user',
-    component:User
-  }
-]
-
-const router = new VueRouter({mode:'history', routes: routes})
-
+Vue.use(Vuevlidate)
 Vue.config.productionTip = false
 
 new Vue({
