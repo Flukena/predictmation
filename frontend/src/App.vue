@@ -35,15 +35,8 @@ export default {
     Reset,
     Styles,
     Navbar,
-
-    // User
-    Styles,
-    // Footer,
     login,
-    Reset,
-
     Singup
-    // Footer,
   },data(){
     return{
       user:null
