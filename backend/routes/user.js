@@ -43,7 +43,7 @@ const signupSchema = Joi.object({
   sex: Joi.any().allow("male", "female", "no").required(),
   birth: Joi.string().required(),
   username: Joi.string().required().external(usernameValidator),
-  ages:Joi.number().required()
+  age:Joi.number().required()
   
 });
 // async function  updateUser(cus_username, cus_password, cus_id){
@@ -62,14 +62,14 @@ const signupSchema = Joi.object({
 //     conn.release()
 //   }
 // }
-router.post("/user/signup", async function (req, res, next) {
+router.post("/user/singup", async function (req, res, next) {
   const conn = await pool.getConnection();
   await conn.beginTransaction();
   try {
     await signupSchema.validateAsync(req.body, { aboutEarly: true });
     
   } catch (err) {
-
+    console.log(err)
     return res.status(400).json(err);
   }
 
@@ -80,7 +80,7 @@ router.post("/user/signup", async function (req, res, next) {
   const cus_phone = req.body.mobile
   const cus_sex = req.body.sex
   const cus_birthday = req.body.birth
-  const cus_age = req.body.ages
+  const cus_age = req.body.age
   try{
     await conn.query(
       'INSERT INTO customer(cus_name, cus_email, cus_phone, cus_sex, cus_birthday, cus_age) ' +
