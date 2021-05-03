@@ -151,5 +151,7 @@ router.post('/user/login', async (req, res, next)=> {
 
 });
 
-
+router.get('/user/me', isLoggedIn, async (req, res, next) => {
+  res.json(req.user)
+})
 exports.router = router;

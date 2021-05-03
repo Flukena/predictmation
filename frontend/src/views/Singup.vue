@@ -55,14 +55,18 @@
           <input class="input" type="email" v-model="email" placeholder="Email" />
         </div>
       </div>
-
+            <div class="field">
+        <div class="control">
+          <input class="input" type="number" v-model="age" placeholder="Age" />
+        </div>
+      </div>
       <form action="">
           <label for="" class="br">Date of birth </label>
         <input type="date" v-model="birth" id="birthday" name="birthday"/>
       </form>
 
       <div class="column is-2"></div>
-      <button class="button is-black" style="width: 100%" @click="submit">Sing up</button>
+      <button class="button is-black" style="width: 100%" @click="submit()">Sing up</button>
     </form>
 
   </div>
@@ -100,7 +104,8 @@ export default {
       sex:"",
       firstname: "",
       lastname: "",
-      birth:""
+      birth:"",
+      age:""
     };
   },
   methods: {
@@ -118,8 +123,9 @@ export default {
           mobile: this.mobile,
           firstname: this.firstname,
           lastname: this.lastname,
-          sex:this.birth,
-          
+          sex:this.sex,
+          birth:this.birth
+
 
 
         };
