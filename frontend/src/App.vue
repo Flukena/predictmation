@@ -3,12 +3,6 @@
     <Reset></Reset>
     <Styles></Styles>
     <Navbar></Navbar>
-
-    <login></login>
-    <!-- <Footer></Footer> -->
-    <router-view></router-view>
-    
-
     <router-view :key="$route.fullPath" @auth-change="onAuthChange" :user="user" />
     <!-- <Footer></Footer> -->
     <Singup></Singup>
@@ -21,11 +15,7 @@ import Styles from '../css/style.css'
 import Reset from '../css/reset.css'
 import Navbar from './components/Navbar'; 
 // import Footer from './components/Footer'; 
-
-import login from './views/Login'
-
 import Singup from './views/Singup'
-
 
 // import User from './views/User'
 import axios from '@/plugins/axios'
@@ -35,8 +25,8 @@ export default {
     Reset,
     Styles,
     Navbar,
-    login,
     Singup
+    // Footer,
   },data(){
     return{
       user:null
@@ -55,7 +45,6 @@ export default {
         this.user = res.data
       })
     }
-
   }
 
 }
