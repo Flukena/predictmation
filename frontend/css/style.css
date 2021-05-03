@@ -1,12 +1,15 @@
 a.navbar-item, .navbar-link{
     margin-left: 1rem;
     font-family: Bahnschrift;
-
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(167, 97, 17));
+    color: white;
+    
 }nav .navbar-end{
         font-family: Bahnschrift;
+        
 }
 nav .navbar-menu{
-
+    
     border-top: 20px;
 }
 nav .navbar-menu{
@@ -24,21 +27,23 @@ nav{
     background-color: darkblue;
 }
 a.navbar-item{
-    color: rgb(255, 181, 131);
+    
 }a.navbar-item:hover{
-    color:  rgb(204, 127, 76);
+    color:  rgb(0, 0, 0);
+    background-image: linear-gradient(to top, rgb(255, 255, 255), rgb(243, 174, 95));
+    font-weight: 1000;
+    font-family: FORTE;
 }
 .button.navbar-item{
     width: 150px;
     border:none;
     opacity: 80%;
-    color: white;
-    background-color: rgb(134, 134, 134);
 }.button.navbar-item:hover{
     transition: all .1s;
 
 }.navbar{
     font-family: NotoSans-Bold;
+    
 }
 
 /* ไตเติ้ล */
@@ -211,7 +216,7 @@ div .home_img{
 
 .footer {
     background-image: linear-gradient(to right, rgba(255, 218, 170, 0), rgb(219, 139, 48));
-    border-color: rgb(0, 0, 0);
+    
 }
 
 .contact, .contact2 {

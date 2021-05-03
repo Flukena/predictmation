@@ -17,10 +17,11 @@
 
       <div class="navbar-menu">
         <div class="navbar-start mt-4">
-         <router-link to="/"> 
-          <a class="navbar-item button is-rounded is-medium">
-            Main
-          </a></router-link>
+          <router-link to="/">
+            <a class="navbar-item button is-rounded is-medium">
+              Main
+            </a></router-link
+          >
           <a class="navbar-item button is-rounded is-medium">
             Our products
           </a>
@@ -33,19 +34,18 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <router-link to="/user/singup">
+              <router-link to="/user/signup">
                 <a
                   class="button  is-rounded is-medium"
                   style="background:#9A5648; color:white"
                 >
                   <strong>Sign up</strong>
                 </a></router-link
-              >
-
-              <router-link to="/user/login">
+              ><router-link to="/user/login">
                 <a class="button is-light is-rounded is-medium">
                   Log in
-                </a></router-link>
+                </a></router-link
+              >
             </div>
           </div>
         </div>
