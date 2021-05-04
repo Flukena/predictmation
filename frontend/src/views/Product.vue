@@ -22,7 +22,7 @@
           </div>
           
         </div>
-        <div class="butpro" style="width: 40%; margin-left:30%;">
+        <div class="butpro" style="width: 87%; margin-left:6%;">
             <button
               class="button"
               id="button-buy"
