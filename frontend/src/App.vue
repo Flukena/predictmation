@@ -1,6 +1,6 @@
 <template>
   <div id="app" style="height:-100px">
-    <Navbar></Navbar>
+    <Navbar :user="user" @update-user="eventUser" ></Navbar>
     <router-view :key="$route.fullPath" @auth-change="onAuthChange" :user="user" />
     </div>
 </template>
@@ -30,7 +30,13 @@ export default {
     getUser(){
       axios.get('/user/me').then(res =>{
         this.user = res.data
+        console.log(this.user)
+
       })
+    },eventUser(){
+      console.log(this.user+ " test")
+
+      this.user = null
     }
   }
 
