@@ -1,11 +1,7 @@
 'use strict';
 const nodemailer = require('nodemailer');
 // async..await is not allowed in global scope, must use a wrapper
-<<<<<<< Updated upstream
  async function mailer(email) {
-=======
-export async function mailer(email) {
->>>>>>> Stashed changes
 // สร้างออปเจ็ค transporter เพื่อกำหนดการเชื่อมต่อ SMTP และใช้ตอนส่งเมล
 console.log(email + "test")
 let transporter = nodemailer.createTransport({
@@ -29,8 +25,4 @@ html: '<b>Hello world?</b>' // html body
 console.log('Message sent: %s', info.messageId);
 }
 
-<<<<<<< Updated upstream
 mailer().catch(console.error);
-=======
-main().catch(console.error);
->>>>>>> Stashed changes

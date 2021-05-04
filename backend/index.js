@@ -20,6 +20,7 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 const indexRouter = require('./routes')
 app.use(indexRouter.router)
+const mailer = require('./nodejs-mailer/index')
 
 const PORT  = process.env.PORT || 3000
 router.post('/', async function(req, res, next){
