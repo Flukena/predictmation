@@ -2,7 +2,11 @@
   <div id="app" style="height:-100px;">
     <Navbar :user="user" @update-user="eventUser" ></Navbar>
     <router-view :key="$route.fullPath" @auth-change="onAuthChange" :user="user" />
+<<<<<<< Updated upstream
      <Foot></Foot>
+=======
+    <Foot></Foot>
+>>>>>>> Stashed changes
     </div>
 </template>
 
@@ -12,6 +16,7 @@ import '../css/reset.css'
 import Foot from "./components/Footer"
 import Navbar from './components/Navbar'; 
 import axios from "@/plugins/axios";
+import Foot from "./components/Footer"
 export default {
   name: 'App',
   components: {
