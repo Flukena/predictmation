@@ -1,22 +1,26 @@
 a.navbar-item, .navbar-link{
     margin-left: 1rem;
     font-family: Bahnschrift;
-    background-image: linear-gradient(to top, rgb(116, 79, 24), rgb(206, 164, 50));
-    color: white;
-    
+    color: rgb(0, 0, 0);
+    font-weight: 1000;
 }nav .navbar-end{
     font-family: Bahnschrift;
+    
 }
 nav .navbar-menu{
     
     border-top: 20px;
+    width: 500px;
+    
 }
 nav .navbar-menu{
     margin-left: 5%;
-
+    
 }nav {
     height: 87px;
 }
+
+
 #singlog {
     background-image: linear-gradient(to bottom, rgb(203, 240, 102), rgb(150, 135, 119));
     color: balck;
@@ -47,11 +51,13 @@ nav{
 }
 a.navbar-item{
     
+    
 }a.navbar-item:hover{
     color:  rgb(0, 0, 0);
-    background-image: linear-gradient(to top, rgb(255, 255, 255), rgb(243, 174, 95));
+    background-image: linear-gradient(to top, rgb(255, 255, 255), rgb(62, 107, 24));
     font-weight: 1000;
-    font-family: FORTE;
+    font-size: 25px;
+    text-shadow: 0 0 3px #ffffff, 0 0 5px #cc9632;
 }
 .button.navbar-item{
     width: 150px;
@@ -221,12 +227,11 @@ div .home_img{
     font-family: Bahnschrift;
     font-size: 20px;
     font-weight: 400;
-    
+    background-color: aquamarine;
 }
 
 #go {
     margin: 20px;
-    
 }
 
 #butpro{

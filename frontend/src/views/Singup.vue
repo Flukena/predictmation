@@ -1,10 +1,13 @@
   <template>
+
   <div class="column is-2 is-offset-5">
+    
     <form class="box" style="margin-top:-60px; width:22%">
       <label for="" class="for" style="font-size: 40px; margin-left: 10%;">Become a member</label><br />
       <div class="column is-2"></div>
+      
 
-      <div class="field">
+      <div class="field" >
         <div class="control">
           <input class="input" type="text" v-model="username" placeholder="Username" />
         </div>
@@ -63,8 +66,8 @@
       <div class="column is-2"></div>
       <button class="button is-black" style="width: 100%" @click="submit()">Sing up</button>
     </form>
-
-  </div>
+</div>
+ 
 </template>
 <script>
 import axios from '@/plugins/axios'
