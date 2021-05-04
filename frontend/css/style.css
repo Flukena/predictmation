@@ -24,23 +24,34 @@ nav .navbar-menu{
 
 
 #singlog {
-    background-image: linear-gradient(to bottom, rgb(203, 240, 102), rgb(150, 135, 119));
-    color: balck;
+    background-color: black;
+    color: rgb(219, 198, 9);
     font-weight: 1000;
+    font-family: FORTE;
+    font-size: 22px;
+    left: -50%;
+    box-shadow: -10px 10px 15px 0 rgba(0, 0, 0, 0.267);
+    text-shadow: 0 0 8px #01e6f7;
 }
 #singlog:hover {
-    background-image: linear-gradient(to bottom, rgb(86, 112, 59), rgb(150, 135, 119));
-    color: rgb(243, 213, 169);
+    background-image: linear-gradient(to bottom, rgb(247, 247, 247)rgb(255, 255, 255)9);
+    color: white;
     font-family: FORTE;
+    
 }
 #singlog2 {
-    background-image: linear-gradient(to bottom, rgb(253, 253, 253), rgb(119, 115, 110));
-    color: black;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 1000;
+    font-family: FORTE;
+    font-size: 22px;
+    left: -50%;
+    box-shadow: -10px 10px 15px 0 rgba(0, 0, 0, 0.267);
+    text-shadow: 0 0 8px #02ffc8;
 }
 #singlog2:hover {
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(201, 194, 186));
-    color: rgb(119, 119, 119);
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));
+    color: rgb(0, 255, 242);
     font-family: FORTE;
 }
 
@@ -200,22 +211,24 @@ div .home_img{
     
 
 }
-#bas {
-    position: relative;
-    top: 20px;
-    left: 25px;
+.Baskets {
+    position: fixed;
+    top: 90px;
+    left: 87%;
+    border: 3px solid #000000;
+    padding: 0.5%;
+    background-image: linear-gradient(to top, rgb(223, 223, 223), rgb(230, 167, 95));
+    border-style: dashed;
+    box-shadow: -10px 10px 15px 0 rgba(0, 0, 0, 0.267);
 }
-.Baskets{
-    float: left;
-    position: absolute;
-    left: 90%; 
-    top: 10%; 
-    transform: translate(-50%, -50%);
-    text-align: center;
-}.Baskets span{
-    font-size: 1.5rem;
-    font-family: Bahnschrift;
-}div.pro_img{
+.Baskets:hover {
+    font-size: 30px;
+    border: 10px solid #157015;
+    font-family: FORTE;
+    border-style: dashed;
+}
+
+div.pro_img{
     position: relative;
     height: 650px;
     width: 100%;
@@ -258,7 +271,7 @@ div .home_img{
     font-family: Bahnschrift;
 }
 #button-buy:hover {
-    color:#09ff00;
+    color:#33b12f;
     font-family: FORTE;
   
 }
@@ -279,6 +292,7 @@ div .home_img{
     line-height: 1.7;
     font-size: 15px;
     color: white;
+    
 }
 
 .contact, .contact2 {
