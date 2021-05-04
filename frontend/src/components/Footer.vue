@@ -1,6 +1,6 @@
 <template>
-  <footer class="footer" style="padding-bottom: 40px">
-    <div class="columns">
+  <footer class="footer" style="padding-bottom: 40px;">
+    <div class="columns" >
       <div class="column is-2 is-offset-2">
         <p style="font-weight: 1000; font-size: 22px; margin-bottom: -17px">
           About us

@@ -6,7 +6,6 @@
         <div
           class="card"
           id="go"
-          
         >
           <div class="card-image" >
             <figure class="image is-4by3" style="margin-bottom: -7px">
@@ -35,7 +34,7 @@
     </div>
 
     <div class="Baskets">
-      <a class="button is-rounded is-medium" id="bas"
+      <a 
         ><i class="fas fa-shopping-basket fa-1x mr-2"></i>
         <span> Baskets</span></a
       >
