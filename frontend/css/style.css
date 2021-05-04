@@ -58,6 +58,9 @@ a.navbar-item{
     font-weight: 1000;
     font-size: 25px;
     text-shadow: 0 0 3px #ffffff, 0 0 5px #cc9632;
+    border-style: solid;
+    border-color: burlywood;
+    border-bottom: rgb(0, 255, 76);
 }
 .button.navbar-item{
     width: 150px;
