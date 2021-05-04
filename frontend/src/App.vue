@@ -2,18 +2,21 @@
   <div id="app" style="height:-100px;">
     <Navbar :user="user" @update-user="eventUser" ></Navbar>
     <router-view :key="$route.fullPath" @auth-change="onAuthChange" :user="user" />
+     <Foot></Foot>
     </div>
 </template>
 
 <script>
 import '../css/style.css'
 import '../css/reset.css'
+import Foot from "./components/Footer"
 import Navbar from './components/Navbar'; 
 import axios from "@/plugins/axios";
 export default {
   name: 'App',
   components: {
     Navbar,
+    Foot
   },data(){
     return{
       user:null

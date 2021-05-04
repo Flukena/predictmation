@@ -67,7 +67,7 @@
           <label for="" class="br">Date of birth </label>
         <input style="width: 100%; margin-top:10px; background-image: linear-gradient(to top, rgb(27, 27, 27), rgb(177, 131, 78));" type="date" v-model="birth" id="birthday" name="birthday" value="asdas"/>
       </form>
-
+ 
       <div class="column is-2"></div>
       <button class="button is-black" style="width: 100%" @click="submit()">Sing up</button>
     </form>
@@ -137,6 +137,7 @@ export default {
           .then((res) => {
             alert("Sign up Success");
             res.status(200)
+              this.$router.push({path: '/user/login'})
           })
           .catch((err) => {
             console.log(data)
