@@ -25,34 +25,39 @@ nav .navbar-menu{
 
 #singlog {
     background-color: black;
-    color: rgb(219, 198, 9);
+    color: rgb(248, 189, 100);
     font-weight: 1000;
-    font-family: FORTE;
+    font-family: Bahnschrift;
     font-size: 22px;
     left: -50%;
     box-shadow: -10px 10px 15px 0 rgba(0, 0, 0, 0.267);
-    text-shadow: 0 0 8px #01e6f7;
+    
+    border-color: rgb(250, 203, 142);
+    border-width: thick;
+    
 }
 #singlog:hover {
     background-image: linear-gradient(to bottom, rgb(247, 247, 247)rgb(255, 255, 255)9);
     color: white;
-    font-family: FORTE;
+    
     
 }
 #singlog2 {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     font-weight: 1000;
-    font-family: FORTE;
+    font-family: Bahnschrift;
     font-size: 22px;
     left: -50%;
     box-shadow: -10px 10px 15px 0 rgba(0, 0, 0, 0.267);
-    text-shadow: 0 0 8px #02ffc8;
+    
+    border-color: rgb(0, 0, 0);
+    border-width: thick;
 }
 #singlog2:hover {
-    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));
-    color: rgb(0, 255, 242);
-    font-family: FORTE;
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+    color: rgb(255, 192, 17);
+    text-shadow: 0 0 3px #000000;
 }
 
 nav{
