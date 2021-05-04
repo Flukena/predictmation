@@ -22,7 +22,7 @@
           </div>
           
         </div>
-        <div class="butpro" style="width: 87%; margin-left:6%;">
+        <div class="butpro" style="width: 83%; margin-left:8%;">
             <button
               class="button"
               id="button-buy"
@@ -34,11 +34,11 @@
       </div>
     </div>
 
-    <!-- <div class="Baskets">
-      <a class="button is-rounded is-medium"
+    <div class="Baskets">
+      <a class="button is-rounded is-medium" id="bas"
         ><i class="fas fa-shopping-basket fa-1x mr-2"></i>
         <span> Baskets</span></a
       >
-    </div> -->
+    </div>
   </div>
 </template>

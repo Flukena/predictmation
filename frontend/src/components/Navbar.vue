@@ -36,7 +36,7 @@
           <a class="navbar-item button" style="
                 border-top-right-radius: 80%;
                 border-bottom-left-radius: 80%;
-              "> Contact us</a>
+              "> About us</a>
         </div>
 
         <div class="navbar-end" v-if="$props.user == null">
