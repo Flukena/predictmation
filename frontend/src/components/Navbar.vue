@@ -22,8 +22,9 @@
               Main
             </a></router-link
           >
+          <router-link to="/product">
           <a class="navbar-item button is-rounded is-medium"> Our products </a>
-
+          </router-link>
           <a class="navbar-item button is-rounded is-medium"> Contact US </a>
         </div>
 

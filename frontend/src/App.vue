@@ -34,7 +34,6 @@ export default {
 
       })
     },eventUser(){
-      console.log(this.user+ " test")
 
       this.user = null
     }
