@@ -18,9 +18,12 @@ app.use(cors())
 app.use(express.static('static'))
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
-const indexRouter = require('./routes')
+const indexRouter = require('./routes/index')
+const userRouter = require('./routes/user')
+const productRouter = require('./routes/product')
+app.use(productRouter.router)
 app.use(indexRouter.router)
-// const mailer = require('./nodejs-mailer/index')
+app.use(userRouter.router)
 
 const PORT  = process.env.PORT || 3000
 router.post('/', async function(req, res, next){
