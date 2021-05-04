@@ -58,6 +58,11 @@
           <input class="input" type="email" v-model="email" placeholder="Email" />
         </div>
       </div>
+            <div class="field">
+        <div class="control">
+          <input class="input" type="number" v-model="age" placeholder="age" />
+        </div>
+      </div>
       <form action="">
           <label for="" class="br">Date of birth </label>
         <input style="width: 100%; margin-top:10px; background-image: linear-gradient(to top, rgb(27, 27, 27), rgb(177, 131, 78));" type="date" v-model="birth" id="birthday" name="birthday" value="asdas"/>

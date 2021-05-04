@@ -28,22 +28,13 @@
               Main
             </a></router-link
           >
-          <a
-            class="navbar-item button is-medium"
-            style="border-top-left-radius: 80%; border-bottom-right-radius: 80%"
-          >
-            Our products
-          </a>
-
-          <a
-            class="navbar-item button is-medium"
-            style="border-top-left-radius: 80%; border-bottom-right-radius: 80%"
-          >
-            Contact US
-          </a>
+          <router-link to="/product">
+          <a class="navbar-item button is-rounded is-medium"> Our products </a>
+          </router-link>
+          <a class="navbar-item button is-rounded is-medium"> Contact US </a>
         </div>
 
-        <div class="navbar-end">
+        <div class="navbar-end" v-if="$props.user == null">
           <div class="navbar-item">
             <div class="buttons">
               <router-link to="/user/singup">
@@ -52,7 +43,7 @@
                 </a></router-link
               ><router-link to="/user/login">
                 <a
-                  class="button is-rounded is-medium"
+                  class="button  is-rounded is-medium"
                   id="singlog2"
                   style="margin-left: 15px"
                 >
@@ -62,7 +53,42 @@
             </div>
           </div>
         </div>
+        <div class="navbar-end" v-if="$props.user != null">
+          <div class="navbar-item">
+            <div class="buttons">
+                  <strong class="mr-2">Username : {{user.cus_username}}</strong>
+
+                <a
+                  class="button  is-rounded is-medium"
+                  id="singlog2"
+                  style="margin-left: 15px"
+                @click="logout()">
+                  Logout
+                </a>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
   </div>
 </template>
+<script>
+export default {
+  props: ["user"],
+  data() {
+    return {};
+  },
+  mounted() {
+    this.showUser();
+  },
+  methods: {
+    showUser() {
+      console.log(this.user);
+    },logout(){
+      localStorage.removeItem('token')
+      console.log("Remove Tokens")
+       this.$emit('update-user')
+    }
+  },
+};
+</script>
