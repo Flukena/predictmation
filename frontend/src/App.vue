@@ -1,5 +1,5 @@
 <template>
-  <div id="app" style="height:-100px">
+  <div id="app" style="height:-100px;">
     <Navbar :user="user" @update-user="eventUser" ></Navbar>
     <router-view :key="$route.fullPath" @auth-change="onAuthChange" :user="user" />
     </div>

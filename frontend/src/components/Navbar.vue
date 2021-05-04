@@ -19,25 +19,24 @@
         <div class="navbar-start mt-4">
           <router-link to="/">
             <a
-              class="navbar-item button is-medium"
+              class="navbar-item button"
               style="
                 border-top-right-radius: 80%;
                 border-bottom-left-radius: 80%;
               "
             >
-              Main
-            </a></router-link
+              Main</a></router-link
           >
           <router-link to="/product">
-          <a class="navbar-item button is-medium" style="
+          <a class="navbar-item button" style="
                 border-top-right-radius: 80%;
                 border-bottom-left-radius: 80%;
-              "> Our products </a>
+              "> Our products</a>
           </router-link>
-          <a class="navbar-item button is-medium" style="
+          <a class="navbar-item button" style="
                 border-top-right-radius: 80%;
                 border-bottom-left-radius: 80%;
-              "> Contact US </a>
+              "> Contact us</a>
         </div>
 
         <div class="navbar-end" v-if="$props.user == null">
