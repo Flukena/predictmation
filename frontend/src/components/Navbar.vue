@@ -86,7 +86,7 @@
   </div>
 </template>
 <script>
-import axios from "@/plugins/axios";
+// import axios from "@/plugins/axios";
 export default {
   props: ["user"],
   mounted() {
@@ -102,14 +102,7 @@ export default {
       console.log("Remove Tokens")
        this.$emit('update-user')
     },
-    getUser () {
-       axios.get('/user/me').then(res => {
-         this.user = res.data
-         console.log(this.user)
-       }).catch(err=>{
-         console.log(err)
-       })
-     }
+
   },
 };
 </script>
