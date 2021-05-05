@@ -21,10 +21,11 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 const indexRouter = require('./routes/index')
 const userRouter = require('./routes/user')
 const productRouter = require('./routes/product')
-
+const basketRouter = require('./routes/basket')
 app.use(productRouter.router)
 app.use(indexRouter.router)
 app.use(userRouter.router)
+app.use(basketRouter.router)
 
 const PORT  = process.env.PORT || 3000
 // router.post('/', async function(req, res, next){
