@@ -30,7 +30,7 @@ const routes = [
     },{
       path:'/billemployee',
       name:'bill',
-      component:() => import('../views/ฺBillemployee.vue')
+      component:() => import('../views/Billemployee.vue')
     },{
       path:'/user/basket',
       name:'basket',
