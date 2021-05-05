@@ -25,18 +25,28 @@
                 border-bottom-left-radius: 80%;
               "
             >
-              Main</a></router-link
+              Main</a
+            ></router-link
           >
           <router-link to="/product">
-          <a class="navbar-item button" style="
+            <a
+              class="navbar-item button"
+              style="
                 border-top-right-radius: 80%;
                 border-bottom-left-radius: 80%;
-              "> Our products</a>
+              "
+            >
+              Our products</a
+            >
           </router-link>
-          <a class="navbar-item button" style="
-                border-top-right-radius: 80%;
-                border-bottom-left-radius: 80%;
-              "> About us</a>
+          <router-link to="aboutus">
+          <a
+            class="navbar-item button"
+            style="border-top-right-radius: 80%; border-bottom-left-radius: 80%"
+          >
+            About us</a
+          >
+          </router-link>
         </div>
 
         <div class="navbar-end" v-if="$props.user == null">
@@ -47,11 +57,7 @@
                   <strong>Sign up</strong>
                 </a></router-link
               ><router-link to="/user/login">
-                <a
-                  class="button"
-                  id="singlog2"
-                  style="margin-left: 15px"
-                >
+                <a class="button" id="singlog2" style="margin-left: 15px">
                   Log in
                 </a></router-link
               >
@@ -60,13 +66,18 @@
         </div>
         <div class="navbar-end" v-if="$props.user != null">
           <div class="navbar-item">
-                  <strong style="margin-right:5rem">Username : {{user.cus_username}}</strong>
+            <strong style="margin-right: 5rem"
+              >Username : {{ user.cus_username }}</strong
+            >
 
             <div class="buttons">
-
-                <a class="button  is-rounded is-medium" id="singlog2"  @click="logout()">
-                  Logout
-                </a>
+              <a
+                class="button is-rounded is-medium"
+                id="singlog2"
+                @click="logout()"
+              >
+                Logout
+              </a>
             </div>
           </div>
         </div>
@@ -83,11 +94,12 @@ export default {
   methods: {
     showUser() {
       console.log(this.user);
-    },logout(){
-      localStorage.removeItem('token')
-      console.log("Remove Tokens")
-       this.$emit('update-user')
-    }
+    },
+    logout() {
+      localStorage.removeItem("token");
+      console.log("Remove Tokens");
+      this.$emit("update-user");
+    },
   },
 };
 </script>

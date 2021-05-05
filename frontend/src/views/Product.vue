@@ -1,5 +1,5 @@
 <template>
-  <div class="main" style="margin-top: 30px;margin-left:20%; width:50%">
+  <div class="main" style="margin-top: 30px;margin-left:20%; width:50%;margin-bottom: 70px">
     <!-- <div class="pro_img"></div>-->
     <div class="columns container-fluid m-0" style="display: grid;
   grid-template-columns: 30% 30% 30% 30%;">
