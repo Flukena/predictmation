@@ -12,6 +12,7 @@ import '../css/reset.css'
 import Foot from "./components/Footer"
 import Navbar from './components/Navbar'; 
 import axios from "@/plugins/axios";
+
 export default {
   name: 'App',
   components: {
