@@ -4,37 +4,52 @@
       <div class="columns">
         <div class="column">
           <label for="" class="forbasket">Product list</label><br /><br /><br />
-          <div class="columns" id="ODRT">
-            <div class="column">
-              <div>Order list</div>
-            </div>
-            <div class="column">
-              <div>Price (฿)</div>
-            </div>
-          </div>
-          <div class="columns" id="ODRT2" v-for="basket in baskets" :key="basket">
-            <div class="column">
-              <div>name</div>
-            </div>
-            <div class="column">
-              <div>20</div>
-            </div>
-          </div>
+          <table style="width:100%; text-align: left;">
+            <tr style="background-color:black; font-family: Bahnschrift;">
+              <th style="color:white;padding:7px">Order list</th>
+              <th style="color:white;padding:7px">Amount</th>
+              <th style="color:white;padding:7px">Price</th>
+            </tr>
+            <tr style=" font-family: Bahnschrift;" >
+              <th style="color:black;padding:7px;">KuyTee</th>
+              <th style="color:black;padding:7px">1</th>
+              <th style="color:black;padding:7px">0.5</th>
+            </tr>
+            <tr style=" font-family: Bahnschrift;" >
+              <th style="color:black;padding:7px;">KuyFluke</th>
+              <th style="color:black;padding:7px">1</th>
+              <th style="color:black;padding:7px">0.01</th>
+            </tr>
+          </table>
+          
+  <!--ลูปตรงนี้นะไอเหี้ยจีน-->        
+          
 
-          <div class="row" style="margin-top: 38%; line-height: 0px" id="totalstyle">
+
+          <div class="row" style="line-height: 0px;" id="totalstyle">
             <div class="columns">
             <div class="column">
-              <div>Total price</div>
+              <div style="margin-right: 380px">Orderlist</div>
+            </div>
+            <div class="column">
+              <div>xxxxx</div>
             </div>
           </div>
           <div class="columns" style="color: #53B434">
             <div class="column">
-              <div>Discount</div>
+              <div style="margin-right: 380px">Discount</div>
             </div>
+            <div class="column">
+              <div>xxxxx</div>
+            </div>
+            
           </div>
           <div class="columns">
             <div class="column">
-              <div>Final price</div>
+              <div style="margin-right: 370px">FinalPrice</div>
+            </div>
+            <div class="column">
+              <div>xxxxx</div>
             </div>
           </div>
           </div>

@@ -444,12 +444,12 @@ div .content{
     margin-top:1rem
 }
 
-#ODRT {
+.ODRT {
     background-color: rgb(0, 0, 0);
     font-family: Bahnschrift;
-    color: white;
     text-align: center;
     border-radius: 100px;
+    padding: 20px;
 }
 #ODRT2 {
     font-family: Bahnschrift;
@@ -460,6 +460,9 @@ div .content{
 #totalstyle {
     font-family: Bahnschrift;
     font-weight: 600;
+    position: absolute;
+    left: 25px;
+    top: 420px;
 }
 
 .social {
