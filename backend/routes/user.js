@@ -152,7 +152,8 @@ router.post('/user/login', async (req, res, next)=> {
 
 });
 
-router.get('/user/me', async (req, res, next) => {
+router.get('/user/me', isLoggedIn,async (req, res, next) => {
+  console.log(req.user + "user index")
   res.json(req.user)
 })
 exports.router = router;

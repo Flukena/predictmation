@@ -134,7 +134,7 @@ export default {
         };
 
         axios
-          .post("http://localhost:3000/user/singup", data)
+          .post("/user/singup", data)
           .then((res) => {
             alert("Sign up Success");
             this.$router.push({path: '/user/login'})
