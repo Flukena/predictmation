@@ -21,14 +21,15 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 const indexRouter = require('./routes/index')
 const userRouter = require('./routes/user')
 const productRouter = require('./routes/product')
+
 app.use(productRouter.router)
 app.use(indexRouter.router)
 app.use(userRouter.router)
 
 const PORT  = process.env.PORT || 3000
-router.post('/', async function(req, res, next){
-    console.log(req.body)
-    res.status(201).send('ok')
-  })
+// router.post('/', async function(req, res, next){
+//     console.log(req.body)
+//     res.status(201).send('ok')
+//   })
   
 app.listen(PORT, ()=>console.log(`server is runing in port ${PORT}`))
