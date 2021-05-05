@@ -29,25 +29,27 @@
         <p style="font-weight: 100">Email : flukegoza@gmail.com</p>
         <p style="margin-bottom: -10px; font-weight: 100">Tel : 080-060-3748</p>
         <br />
-        <a
+        
+        <a 
           href="https://www.facebook.com/sakon.terasuwanjak/photos_all"
           style="margin-right: 15px"
-          ><img
+          ><img class="social"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
             style="width: 35px; height: 35px"
         /></a>
-        <a
+        <a 
           href="https://www.instagram.com/sakon_fluke/"
           style="margin-right: 15px"
-          ><img
+          ><img class="social"
             src="https://www.lameziacomicsandco.it/wp-content/uploads/2020/10/IG-icon.png"
           style="width: 35px; height: 35px"
         /></a>
-        <a href="https://www.youtube.com/c/SubTryGaming/videos"
-          ><img
+        <a href="https://www.youtube.com/c/SubTryGaming/videos" 
+          ><img class="social"
             src="https://www.tekla.com/sites/default/files/styles/medium_2x/public/media/france/youtube.png?itok=4HvwKqvn"
             style="width: 35px; height: 35px"
         /></a>
+        
       </div>
     </div>
   </footer>
