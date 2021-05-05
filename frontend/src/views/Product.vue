@@ -1,13 +1,10 @@
 <template>
   <div class="main" style="margin-top: 30px">
     <!-- <div class="pro_img"></div>-->
-    <div
-      class="columns container-fluid m-0"
-      style="grid-auto-columns: minmax(10px, auto)"
-    >
-      <div class="column is-2" v-for="product in products" :key="product">
-        <div class="card" id="go">
-          <div class="card-image">
+    <div class="columns container-fluid m-0" style="grid-auto-columns: minmax(10px, auto);" >
+      <div class="column is-2 " v-for="product in products" :key="product.product_name">
+        <div  class="card" id="go" >
+          <div class="card-image" >
             <figure class="image is-4by3" style="margin-bottom: -7px">
               <img
                 src="https://acuisineth.com/app/uploads/2020/07/Apple-Cinnamon-Cake-12-1024x683.jpg"

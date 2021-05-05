@@ -77,9 +77,6 @@
 <script>
 export default {
   props: ["user"],
-  data() {
-    return {};
-  },
   mounted() {
     this.showUser();
   },
