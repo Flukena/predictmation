@@ -1,9 +1,8 @@
 <template>
   <div class="main" style="margin-top: 30px">
     <!-- <div class="pro_img"></div>-->
-    <div class="columns is-desktop" >
-      <div class="column is-2 is-offset-2" >
-        <div >
+    <div class="columns container-fluid m-0" style="grid-auto-columns: minmax(10px, auto);" >
+      <div class="column is-2 " v-for="product in products" :key="product">
         <div  class="card" id="go" >
           <div class="card-image" >
             <figure class="image is-4by3" style="margin-bottom: -7px">
@@ -27,8 +26,10 @@
             >
               Buy
             </button>
-          </div></div>
+          </div>
       </div>
+
+      
     </div>
 
     <div class="Baskets">
@@ -57,7 +58,8 @@ export default {
     queryProduct(){
       axios.get('http://localhost:3000/product')
       .then((response)=>{
-        this.product = response.data
+        this.products = response.data
+        console.log(this.products)
       })
     }
   },

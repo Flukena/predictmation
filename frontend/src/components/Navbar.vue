@@ -60,14 +60,11 @@
         </div>
         <div class="navbar-end" v-if="$props.user != null">
           <div class="navbar-item">
-            <div class="buttons">
-                  <strong class="mr-2">Username : {{user.cus_username}}</strong>
+                  <strong style="margin-right:5rem">Username : {{user.cus_username}}</strong>
 
-                <a
-                  class="button  is-rounded is-medium"
-                  id="singlog2"
-                  style="margin-left: 15px"
-                @click="logout()">
+            <div class="buttons">
+
+                <a class="button  is-rounded is-medium" id="singlog2"  @click="logout()">
                   Logout
                 </a>
             </div>
