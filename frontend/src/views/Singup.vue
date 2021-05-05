@@ -1,6 +1,6 @@
   <template>
 
-  <div class="column is-2 is-offset-5">
+  <div class="column is-2 is-offset-5" style="height:900px">
     
     <form class="box" style="margin-top:-60px; width:22%">
       <label for="" class="for" style="font-size: 40px; margin-left: 10%;">Become a member</label><br />

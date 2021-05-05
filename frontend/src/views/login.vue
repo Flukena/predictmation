@@ -1,6 +1,6 @@
 
   <template>
-  <div class="column is-2 is-offset-5">
+  <div class="column is-2 is-offset-5" style="height:500px">
     <form class="box">
       <div class="columns">
         <div class="column">
