@@ -1,7 +1,7 @@
 <template>
   <div class="main" style="margin-top: 30px">
     <!-- <div class="pro_img"></div>-->
-          <div class="modal is-active">
+          <div class="modal " :class="{ 'is-active':modalBasket}">
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
@@ -13,7 +13,7 @@
         </section>
         <footer class="modal-card-foot">
           <button class="button is-success">Save changes</button>
-          <button class="button">Cancel</button>
+          <button class="button" @click="modalBasket = !modalBasket">Cancel</button>
         </footer>
       </div>
     </div>
@@ -60,7 +60,7 @@
     <div class="Baskets">
       <a
         ><i class="fas fa-shopping-basket fa-1x mr-2"></i>
-        <span> Baskets</span></a
+        <span @click="modalBasket = !modelBasket"> Baskets</span></a
       >
     </div>
   </div>
@@ -69,11 +69,13 @@
 <script>
 import axios from "@/plugins/axios";
 export default {
+  
   name: "Home",
   props: ["user"],
   data() {
     return {
       products: [],
+      modalBasket:true
     };
   },
   mounted() {
