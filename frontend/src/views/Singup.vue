@@ -143,7 +143,7 @@ export default {
           })
           .catch((err) => {
             console.log(data)
-            alert(err.response.data.details.message)
+            alert(err.response.data)
             console.log(err)
           });
       }

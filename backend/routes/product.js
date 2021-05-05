@@ -26,9 +26,9 @@ router.put("/product/cart", isLoggedIn, async (req, res, next)=>{
         // console.log(cus_id)
         await conn.query("INSERT INTO  cart(cus_id,comment)" + "VALUES(?,?)",[cus_id, comment])
         let cart_id = await conn.query('select cart_id from cart  where cus_id = ?',[cus_id] )
+        console.log(cart_id[0])
         cart_id = cart_id[0][0].cart_id
-        console.log(cart_id)
-        await conn.query('INSERT INTO order_detail(price, unit, cart_id, product_id)',[price, 1, cart_id, product_id])
+        await conn.query('INSERT INTO order_detail(price, unit, cart_id, product_id)' +"VALUES(?, ?, ?,?)",[price, 1, cart_id, product_id])
         conn.commit()
         res.status(200).send()
     }catch(error){
