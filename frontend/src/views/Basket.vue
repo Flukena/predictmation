@@ -29,7 +29,7 @@
           <div class="row" style="line-height: 0px;" id="totalstyle">
             <div class="columns">
             <div class="column">
-              <div style="margin-right: 380px">Orderlist</div>
+              <div style="margin-right: 300px">Orderlist</div>
             </div>
             <div class="column">
               <div>xxxxx</div>
@@ -37,7 +37,7 @@
           </div>
           <div class="columns" style="color: #53B434">
             <div class="column">
-              <div style="margin-right: 380px">Discount</div>
+              <div style="margin-right: 300px">Discount</div>
             </div>
             <div class="column">
               <div>xxxxx</div>
@@ -46,7 +46,7 @@
           </div>
           <div class="columns">
             <div class="column">
-              <div style="margin-right: 370px">FinalPrice</div>
+              <div style="margin-right: 290px">FinalPrice</div>
             </div>
             <div class="column">
               <div>xxxxx</div>
