@@ -1,5 +1,5 @@
 <template>
-  <div class="column is-2 is-offset-5">
+  <div class="column is-2 is-offset-5" style="height:800px">
     <form class="boxbill" style="height: 60%;">
       <div class="columns" style="background-color: black;">
         <div class="column">
