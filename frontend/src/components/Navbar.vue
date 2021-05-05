@@ -73,13 +73,16 @@
             <strong style="margin-right: 5rem"
               >Username : {{ user.cus_username }}</strong
             >
+
+
             <div class="buttons">
               <a
                 class="button is-rounded is-medium"
                 id="singlog2"
-                @click="logout()"
-              >
-                Logout
+                @click="logout()">
+                
+                {{ user.cus_username }}
+                Logout  
               </a>
             </div>
           </div>
@@ -92,12 +95,18 @@
 // import axios from "@/plugins/axios";
 export default {
   props: ["user"],
+
   mounted() {
     this.showUser();
   },
   methods: {
     showUser() {
       console.log(this.user);
+      console.log(this.user );
+    },logout(){
+      localStorage.removeItem('token')
+      console.log("Remove Tokens")
+       this.$emit('update-user')
     },
     logout() {
       localStorage.removeItem("token");

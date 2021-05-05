@@ -7,8 +7,7 @@
   <div class="modal-card" style="height:350px">
     <header class="modal-card-head">
       <p class="modal-card-title">{{name}}</p>
-      <button class="delete" aria-label="close" @click="modalDetail = false
-      "></button>
+      <button class="delete" aria-label="close" @click="modalDetail = false"></button>
     </header>
     <section class="modal-card-body">
       <!-- Content ... -->
@@ -51,7 +50,6 @@
     </footer>
   </div>
 </div>
-<!-- detil and Buy -->
 
 
     <div class="columns container-fluid m-0" style="display: grid;
@@ -105,7 +103,7 @@
       <router-link to="/user/basket">
       <a
         ><i class="fas fa-shopping-basket fa-1x mr-2"></i>
-        <span> Baskets</span></a
+        <span > Baskets({{basket}})</span></a
       >
       </router-link>
     </div>
@@ -131,18 +129,21 @@ export default {
       error_dropdown: false,
       comment:"",
       product_id: 0,
+      basket:0
     };
   },
   mounted() {
     this.queryProduct();
+    this.countProduct()
   },
   methods: {
     queryProduct() {
-      axios.get("http://localhost:3000/product").then((response) => {
+      axios.get("/product").then((response) => {
         this.products = response.data;
         console.log(this.products);
       });
-    },add(){
+    },
+    add(){
       const send = {
         name:this.name,
         product_id:this.product_id,
@@ -158,10 +159,16 @@ export default {
       this.name = "";
       this.modalDetail = false
       this.comment = ""
+      this.basket++
       }else{
         this.error_dropdown = true
       }
       
+    },
+    countProduct(){
+      axios.get("/product/count").then((response)=>{
+        this.basket = response.data.count
+      })
     }
   },
 };

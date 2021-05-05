@@ -8,9 +8,13 @@ router.get("/product", async (req, res, next)=>{
     await conn.beginTransaction();
     try{
         const product_list = await conn.query('SELECT * FROM product group by product_name')
-        res.json(product_list[0])
+        res.status(200).json(product_list[0])
+        conn.commit()
+
     }catch(error){
-        console.log("Product : " + error)
+        console.log("Product: ***###" + error.toString())
+        conn.rollback()
+        res.status(400).send(error.toString());
     }
 });
 router.put("/product/cart", isLoggedIn, async (req, res, next)=>{
@@ -40,6 +44,25 @@ router.put("/product/cart", isLoggedIn, async (req, res, next)=>{
         res.status(400).json(error.toString());
     }finally{
         conn.release()
+    }
+})
+router.get('/product/count', isLoggedIn, async(req, res, next)=>{
+    const conn = await pool.getConnection();
+    await conn.beginTransaction();
+    try{
+        const [cart_id] = await conn.query('select cart_id from cart where cus_id= ? ',[req.user.cus_id])
+
+        if(cart_id.length  < 0){
+             return res.json({count:0})
+        }else{
+        const [count] = await conn.query("select (cart_id) from order_detail where cart_id = ? ", [cart_id[0].cart_id])
+             return res.json({count:count.length})   
+        }
+
+    }catch(error){
+        console.log(error)
+        conn.rollback()
+        res.status(400).json(error.toString())
     }
 })
 
