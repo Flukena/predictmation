@@ -76,7 +76,6 @@ export default {
       axios
         .post("http://localhost:3000/user/login", data)
         .then((res) => {
-          console.log('Test Login')
           const token = res.data.token;
           localStorage.setItem("token", token);
           this.$emit("auth-change");

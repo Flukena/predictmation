@@ -67,10 +67,7 @@ nav{
     min-height: 87px;
     background-color: darkblue;
 }
-a.navbar-item{
-    
-    
-}a.navbar-item:hover{
+a.navbar-item:hover{
     
     color:  rgb(0, 0, 0);
     background-image: linear-gradient(to top, rgb(255, 255, 255), rgb(62, 107, 24));

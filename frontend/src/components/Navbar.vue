@@ -60,12 +60,14 @@
         </div>
         <div class="navbar-end" v-if="$props.user != null">
           <div class="navbar-item">
-                  <strong style="margin-right:5rem">Username : {{user.cus_username}}</strong>
+                  
 
             <div class="buttons">
 
                 <a class="button  is-rounded is-medium" id="singlog2"  @click="logout()">
-                  Logout
+                  Logout<br>
+                <strong style="font-size:10px">Username : {{user}}</strong>
+
                 </a>
             </div>
           </div>
@@ -75,6 +77,7 @@
   </div>
 </template>
 <script>
+import axios from "@/plugins/axios";
 export default {
   props: ["user"],
   mounted() {
@@ -82,12 +85,22 @@ export default {
   },
   methods: {
     showUser() {
-      console.log(this.user);
+      console.log(this.user );
     },logout(){
+      
       localStorage.removeItem('token')
+      
       console.log("Remove Tokens")
        this.$emit('update-user')
-    }
+    },
+    getUser () {
+       axios.get('/user/me').then(res => {
+         this.user = res.data
+         console.log(this.user)
+       }).catch(err=>{
+         console.log(err)
+       })
+     }
   },
 };
 </script>
