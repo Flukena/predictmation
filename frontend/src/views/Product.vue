@@ -1,9 +1,24 @@
 <template>
   <div class="main" style="margin-top: 30px;margin-left:20%; width:50%">
     <!-- <div class="pro_img"></div>-->
-    <div class="columns container-fluid m-0" style="display: grid;
-  grid-template-columns: 30% 30% 30% 30%;">
-      <div class="column is-1 is-offset-0" v-for="product in products" :key="product.product_name" style="width: 100%;" >
+          <div class="modal is-active">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Modal title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Save changes</button>
+          <button class="button">Cancel</button>
+        </footer>
+      </div>
+    </div>
+    <div class="columns container-fluid m-0" style="grid-auto-columns: minmax(10px, auto);" >
+      <div class="column is-2 " v-for="product in products" :key="product.product_name">
         <div  class="card" id="go" >
           <div class="card-image" >
             <figure class="image is-4by3" style="margin-bottom: -7px;">
