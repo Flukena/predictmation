@@ -86,6 +86,7 @@
   </div>
 </template>
 <script>
+import axios from "@/plugins/axios";
 export default {
   props: ["user"],
   mounted() {
@@ -93,13 +94,22 @@ export default {
   },
   methods: {
     showUser() {
-      console.log(this.user);
+      console.log(this.user );
+    },logout(){
+      
+      localStorage.removeItem('token')
+      
+      console.log("Remove Tokens")
+       this.$emit('update-user')
     },
-    logout() {
-      localStorage.removeItem("token");
-      console.log("Remove Tokens");
-      this.$emit("update-user");
-    },
+    getUser () {
+       axios.get('/user/me').then(res => {
+         this.user = res.data
+         console.log(this.user)
+       }).catch(err=>{
+         console.log(err)
+       })
+     }
   },
 };
 </script>

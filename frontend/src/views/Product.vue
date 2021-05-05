@@ -16,7 +16,7 @@
       <div class="dropdown " :class="{'is-active':dropdown_size}">
   <div class="dropdown-trigger">
     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" @click="dropdown_size= !dropdown_size">
-      <span>Size</span>
+      <span>{{size}}</span>
       <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span>
@@ -24,28 +24,27 @@
   </div>
   <div class="dropdown-menu "  id="dropdown-menu" role="menu">
     <div class="dropdown-content">
-      <a href="#" class="dropdown-item">
+      <a href="#" class="dropdown-item" @click="size='S', dropdown_size = false, price = 35,error_dropdown =false">
         S (ราคา 35 บาท)
       </a>
-            <a href="#" class="dropdown-item">
+            <a href="#" class="dropdown-item" @click="size='M', dropdown_size = false, price = 45, error_dropdown =false">
         M (ราคา 45 บาท)
       </a>
-            <a href="#" class="dropdown-item">
+            <a href="#" class="dropdown-item" @click="size='L',dropdown_size = false, price = 55, error_dropdown =false">
         L (ราคา 55 บาท)
       </a>
     </div>
   </div>
   <div class="w-80">
-    <input class="input ml-2 " type="text" placeholder="More">
-    <div class="contorl is-right">
-</div>
+    <input class="input ml-2 " type="text" placeholder="More" v-model="comment">
+    <span class="has-text-danger" style="margin-left: 1rem margin-bottom:1rem" v-if="error_dropdown">กรุณาเลือก Size</span>
 </div>
 
 </div>
 <!-- dropdown size -->
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success ">Add</button>
+      <button class="button is-success " @click="add">Add</button>
       <button class="button" @click="modalDetail = false">Cancel</button>
             <p style="margin-left:18rem" class="label ">
     ราคาสินค้า : {{price}}</p>
@@ -93,7 +92,7 @@
               width: 100%;
               border-style: hidden;
               height: 30px;
-            " @click="name = product.product_name, modalDetail = true"
+            " @click="name = product.product_name, modalDetail = true,product_id= product.product_id "
           >
            Details Buy
           </button>
@@ -127,7 +126,11 @@ export default {
       modalDetail:false,
       dropdown_size:false,
       name:"",
-      price:0
+      price:0,
+      size:"Size",
+      error_dropdown: false,
+      comment:"",
+      product_id: 0,
     };
   },
   mounted() {
@@ -139,7 +142,27 @@ export default {
         this.products = response.data;
         console.log(this.products);
       });
-    },
+    },add(){
+      const send = {
+        name:this.name,
+        product_id:this.product_id,
+        size:this.size,
+        price:this.price,
+      }
+      if(this.size != 'Size'){
+        axios.put("http://localhost:3000/product/cart", send).then((res) =>{
+          console.log(res)
+        })
+      this.size = 'Size';
+      this.price = 0;
+      this.name = "";
+      this.modalDetail = false
+      this.comment = ""
+      }else{
+        this.error_dropdown = true
+      }
+      
+    }
   },
 };
 </script>

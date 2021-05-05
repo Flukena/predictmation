@@ -1,6 +1,6 @@
 <template>
   <div id="app" style="height:-100px;">
-    <Navbar :user="user" @update-user="eventUser" ></Navbar>
+    <Navbar @update-user="eventUser" :user="user"></Navbar>
     <router-view :key="$route.fullPath" @auth-change="onAuthChange" :user="user" />
     <Foot></Foot>
     </div>
@@ -12,7 +12,6 @@ import '../css/reset.css'
 import Foot from "./components/Footer"
 import Navbar from './components/Navbar'; 
 import axios from "@/plugins/axios";
-
 export default {
   name: 'App',
   components: {
@@ -36,11 +35,8 @@ export default {
         this.user = res.data
         console.log(this.user)
 
-      }).catch(err=>{
-         console.log(err)
-       })
+      })
     },eventUser(){
-
       this.user = null
     }
   }
