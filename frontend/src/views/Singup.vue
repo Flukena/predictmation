@@ -41,7 +41,7 @@
         <label for="sex" class="sex"></label>
         <select name="sex" v-model="sex" id="sex">
           <option value="" style="color: black;">Choose gender</option>
-          <option value="no" style="color: black;">No gender</option>
+          <option value="nogender" style="color: black;">No gender</option>
           <option value="male" style="color: black;">Male</option>
           <option value="femail" style="color: black;">Female</option>
         </select>
@@ -143,7 +143,7 @@ export default {
           })
           .catch((err) => {
             console.log(data)
-            alert(err.response.data.details)
+            alert(err.response.data.details.message)
             console.log(err)
           });
       }
