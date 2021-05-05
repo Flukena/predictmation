@@ -13,7 +13,7 @@
         </section>
         <footer class="modal-card-foot">
           <button class="button is-success">Save changes</button>
-          <button class="button" @click="modalBasket = !modalBasket">Cancel</button>
+          <button class="button" @click="modalBasket = false">Cancel</button>
         </footer>
       </div>
     </div>
@@ -76,7 +76,7 @@ export default {
   data() {
     return {
       products: [],
-      modalBasket:true
+      modalBasket:false
     };
   },
   mounted() {
