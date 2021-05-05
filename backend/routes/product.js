@@ -7,7 +7,7 @@ router.get("/product", async (req, res, next)=>{
     const conn = await pool.getConnection();
     await conn.beginTransaction();
     try{
-        const product_list = await conn.query('SELECT * FROM product')
+        const product_list = await conn.query('SELECT * FROM product group by product_name')
         res.json(product_list[0])
     }catch(error){
         console.log("Product : " + error)
