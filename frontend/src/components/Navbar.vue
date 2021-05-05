@@ -2,6 +2,7 @@
   <div>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
+        
         <a
           role="button"
           class="navbar-burger"
@@ -40,12 +41,15 @@
             >
           </router-link>
           <router-link to="aboutus">
-          <a
-            class="navbar-item button"
-            style="border-top-right-radius: 80%; border-bottom-left-radius: 80%"
-          >
-            About us</a
-          >
+            <a
+              class="navbar-item button"
+              style="
+                border-top-right-radius: 80%;
+                border-bottom-left-radius: 80%;
+              "
+            >
+              About us</a
+            >
           </router-link>
         </div>
 
@@ -66,6 +70,9 @@
         </div>
         <div class="navbar-end" v-if="$props.user != null">
           <div class="navbar-item">
+            <strong style="margin-right: 5rem"
+              >Username : {{ user.cus_username }}</strong
+            >
 
 
             <div class="buttons">
@@ -94,13 +101,19 @@ export default {
   },
   methods: {
     showUser() {
+      console.log(this.user);
       console.log(this.user );
     },logout(){
       localStorage.removeItem('token')
       console.log("Remove Tokens")
        this.$emit('update-user')
     },
+    logout() {
+      localStorage.removeItem("token");
 
+      console.log("Remove Tokens");
+      this.$emit("update-user");
+    },
   },
 };
 </script>
