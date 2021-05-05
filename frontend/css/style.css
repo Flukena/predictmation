@@ -313,7 +313,7 @@ div.pro_img{
     color: rgb(255, 255, 255);
     position: fixed;
     top: 780px;
-    left: 34.2%;
+    left: 29%;
     width: 4%;
     height: 5%;
     font-size: 25px;
@@ -328,7 +328,7 @@ div.pro_img{
     color: rgb(255, 255, 255);
     position: fixed;
     top: 780px;
-    left: 52.8%;
+    left: 58%;
     width: 13%;
     height: 5%;
     font-size: 25px;
@@ -356,7 +356,19 @@ div.pro_img{
         border-width: thick;
         padding: 1.6rem;
         position: absolute;
-        width: 600px;
+        width: 800px;
         left: 50%; 
         transform: translate(-50%, 20%);
+}
+
+#billemtitlestyle {
+    color: yellow;
+    font-family: Bahnschrift;
+    
+}
+
+#billemstyle {
+    color: rgb(0, 0, 0);
+    font-family: Bahnschrift;
+    
 }
