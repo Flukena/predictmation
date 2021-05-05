@@ -4,6 +4,7 @@
       <div class="columns">
         <div class="column">
           <label for="" class="forbasket">Product list</label><br />
+          
         </div>
         <div class="column" id="payment">
           <h1 style="position:relative;left: -15px">Payment</h1>
