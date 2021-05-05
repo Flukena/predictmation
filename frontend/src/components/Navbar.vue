@@ -103,10 +103,6 @@ export default {
     showUser() {
       console.log(this.user);
       console.log(this.user );
-    },logout(){
-      localStorage.removeItem('token')
-      console.log("Remove Tokens")
-       this.$emit('update-user')
     },
     logout() {
       localStorage.removeItem("token");

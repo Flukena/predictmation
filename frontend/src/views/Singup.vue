@@ -1,8 +1,8 @@
   <template>
 
-  <div class="column is-2 is-offset-5" style="height:900px">
+  <div class="column is-2 is-offset-5" style="height:900px" id="singupwall">
     
-    <form class="box" style="margin-top:-60px; width:22%">
+    <form class="box" style="margin-top:-75px; width:22%">
       <label for="" class="for" style="font-size: 40px; margin-left: 10%;">Become a member</label><br />
       <div class="column is-2"></div>
       

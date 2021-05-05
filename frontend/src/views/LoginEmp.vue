@@ -1,6 +1,6 @@
 
   <template>
-  <div class="column is-2 is-offset-5" style="height: 500px">
+  <div class="column is-2 is-offset-5" style="height:600px" id="loginwall">
     <form class="box" style="background-color: black;">
       <div class="columns">
         <div class="column">
