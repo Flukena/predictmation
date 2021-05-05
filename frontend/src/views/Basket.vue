@@ -12,22 +12,15 @@
               <div>Price (฿)</div>
             </div>
           </div>
-          <div class="columns" id="ODRT2">
+          <div class="columns" id="ODRT2" v-for="basket in baskets" :key="basket">
             <div class="column">
-              <div>Latte</div>
+              <div>name</div>
             </div>
             <div class="column">
               <div>20</div>
             </div>
           </div>
-          <div class="columns" id="ODRT2">
-            <div class="column">
-              <div>Mocca</div>
-            </div>
-            <div class="column">
-              <div>25</div>
-            </div>
-          </div>
+
           <div class="row" style="margin-top: 38%; line-height: 0px" id="totalstyle">
             <div class="columns">
             <div class="column">
@@ -83,3 +76,28 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from "@/plugins/axios";
+export default {
+  data() {
+    return{
+      baskets:{}
+    }
+  },
+  mounted(){
+    this.onBasket()
+  },
+  methods:{
+    onBasket(){
+      axios.get('/basket').then(res =>{
+        console.log(res + "basket")
+        this.baskets = res.data
+      }).catch((error)=>{
+        console.log(error)
+      })
+
+    }
+  }
+}
+</script>
