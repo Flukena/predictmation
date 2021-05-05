@@ -111,7 +111,7 @@ router.post('/user/login', async (req, res, next)=> {
   try{
     await loginSchema.validateAsync(req.body, {abortEarly:false})
   }catch(err){
-
+    console.log(error)
     return res.status(400).send(err)
     
   }
@@ -152,7 +152,7 @@ router.post('/user/login', async (req, res, next)=> {
 
 });
 
-router.get('/user/me', isLoggedIn, async (req, res, next) => {
+router.get('/user/me', async (req, res, next) => {
   res.json(req.user)
 })
 exports.router = router;

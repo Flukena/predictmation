@@ -37,7 +37,7 @@
           </label>
           <div class="column is-2"></div>
 
-          <button class="button is-black" style="width: 100%" @click="submit()">
+          <button class="button is-black" style="width: 100%" @click="submit">
             Log in
           </button>
         </div>
@@ -68,12 +68,13 @@ export default {
   },
   methods: {
     submit() {
+      console.log("test")
       const data = {
         username: this.username,
         password: this.password,
       };
       axios
-        .post("http://localhost:3000/user/login/", data)
+        .post("http://localhost:3000/user/login", data)
         .then((res) => {
           console.log('Test Login')
           const token = res.data.token;
@@ -82,8 +83,8 @@ export default {
           this.$router.push({path:"/" });
         })
         .catch((error) => {
-          this.error = error.response;
-          console.log(error);
+           this.error = error
+           console.log(error)
         });
     },
   },
