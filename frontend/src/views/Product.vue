@@ -1,11 +1,12 @@
 <template>
-  <div class="main" style="margin-top: 30px;">
+  <div class="main" style="margin-top: 30px;margin-left:20%; width:50%">
     <!-- <div class="pro_img"></div>-->
-    <div class="columns container-fluid m-0">
-      <div class="column is-2 " v-for="product in products" :key="product.product_name" >
+    <div class="columns container-fluid m-0" style="display: grid;
+  grid-template-columns: 30% 30% 30% 30%;">
+      <div class="column is-1 is-offset-0" v-for="product in products" :key="product.product_name" style="width: 100%;" >
         <div  class="card" id="go" >
           <div class="card-image" >
-            <figure class="image is-4by3" style="margin-bottom: -7px">
+            <figure class="image is-4by3" style="margin-bottom: -7px;">
               <img
                 src="https://acuisineth.com/app/uploads/2020/07/Apple-Cinnamon-Cake-12-1024x683.jpg"
                 alt=""
@@ -48,6 +49,7 @@
       >
     </div>
   </div>
+  
 </template>
 
 <script>
