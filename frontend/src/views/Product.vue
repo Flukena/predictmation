@@ -103,10 +103,12 @@
     
 
     <div class="Baskets">
+      <router-link to="/user/basket">
       <a
         ><i class="fas fa-shopping-basket fa-1x mr-2"></i>
         <span> Baskets</span></a
       >
+      </router-link>
     </div>
   </div>
   
