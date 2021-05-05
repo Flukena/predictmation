@@ -3,10 +3,8 @@
     <!-- <div class="pro_img"></div>-->
     <div class="columns is-desktop" >
       <div class="column is-2 is-offset-2" >
-        <div
-          class="card"
-          id="go"
-        >
+        <div >
+        <div  class="card" id="go" >
           <div class="card-image" >
             <figure class="image is-4by3" style="margin-bottom: -7px">
               <img
@@ -29,7 +27,7 @@
             >
               Buy
             </button>
-          </div>
+          </div></div>
       </div>
     </div>
 
@@ -41,3 +39,28 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from '@/plugins/axios'
+export default {
+  name: "Home",
+  props: ['user'],
+  data() {
+    return {
+    products:[]      
+    };
+  },
+  mounted() {
+    this.queryProduct ();
+  },
+  methods: {
+    queryProduct(){
+      axios.get('http://localhost:3000/product')
+      .then((response)=>{
+        this.product = response.data
+      })
+    }
+  },
+};
+
+</script>
