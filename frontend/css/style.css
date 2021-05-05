@@ -423,3 +423,11 @@ div.pro_img{
     grid-row: 1;
 }
 
+}div .content{
+    font-size: 12px;
+
+} .size{
+    font-weight: 800;
+    color:#000000;
+    margin-top:1rem
+}
