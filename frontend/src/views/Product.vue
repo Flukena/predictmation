@@ -1,5 +1,6 @@
 <template>
   <div class="main" style="margin-top: 30px;margin-left:20%; width:50%;margin-bottom: 70px">
+    <!-- <div class="pro_img"></div>-->
     <!-- detail and buy  -->
   <div class="modal " :class="{'is-active':modalDetail}">
   <div class="modal-background"></div>
