@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 650px" id="basketwall">
+  <div style="height: 700px" id="basketwall">
     <div class="boxbasket">
       <div class="columns">
         <div class="column">

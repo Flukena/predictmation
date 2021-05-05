@@ -149,6 +149,7 @@ a.navbar-item:hover{
 #basketwall {
     background-image: url("https://wallpaperaccess.com/full/1737168.jpg");
     margin-top: 17px;
+    margin-bottom: 0px;
 }
 
 .forbasket {
