@@ -62,7 +62,16 @@ export default {
       })
     },
     selected(bill){
+      if(this.select.indexOf(bill.order_d_id) == -1){
         this.select.push(bill.order_d_id)
+      }
+    },confirmSend(){
+
+      axios.post('/confirm', {text:"dsasdadsa"}).then(response =>{
+        console.log(response)
+}).catch(error=>{
+        console.log(error)
+      })
     }
   }
 
