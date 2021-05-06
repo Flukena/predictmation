@@ -153,9 +153,58 @@ router.post('/user/login', async (req, res, next)=> {
   }
 
 });
+const CheangeSchema = Joi.object({
+  password:Joi.string().required(),
+  new_password: Joi.string().required().custom(passwordValidator),
+  confirm_new_password: Joi.string().required().valid(Joi.ref('new_password')),
+})
+
+router.put('/changepassword', isLoggedIn, async (req, res)=>{
+  const username = req.user.cus_username
+  // const password_list = req.body
+  const password = req.body.password
+
+
+  try{
+    await CheangeSchema.validateAsync(req.body, {abortEarly:false})
+  }catch(error){
+    console.log(error)
+    return res.status(400).send(error)
+    
+  }
+  const conn = await pool.getConnection();
+  await conn.beginTransaction();
+  try{
+
+  const [[user]] = await conn.query('SELECT * FROM cus_user WHERE cus_username=?', [username])
+    if(!user){
+      throw new Error('Incorrect password')
+    }
+    if (!(await bcrypt.compare(password, user.cus_password))){
+      throw new Error('Incorrent password')
+    }
+
+    const new_password = await bcrypt.hash(req.body.new_password, 5)
+    await conn.query('Update cus_user set cus_password = ? where cus_username = ? ', [new_password, username])
+    console.log(new_password)
+
+    conn.commit()
+  }catch(error){
+    console.log(error)
+
+    conn.rollback()
+    res.status(400).json(error.toString())
+  }finally{
+    conn.release()
+  }
+
+
+})
 
 router.get('/user/me', isLoggedIn,async (req, res, next) => {
   console.log(req.user + "user index")
   res.json(req.user)
 })
+
+
 exports.router = router;

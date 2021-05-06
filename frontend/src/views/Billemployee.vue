@@ -15,7 +15,7 @@
               <th style="color:white;padding:7px">Select</th>
             </tr>
 
-            <tr style=" font-family: Bahnschrift;" v-for="bill in bills" :key="bill" v-show="bill.paid ==  1">
+            <tr style=" font-family: Bahnschrift;" v-for="bill in bills" :key="bill" v-show="bill.paid ==  1 && bill.ready == 0">
               <th style="color:black;padding:7px;" >{{bill.order_d_id}}</th>
               <th style="color:black;padding:7px;" >{{bill.product_name}}</th>
               <th style="color:black;padding:7px;" >{{bill.product_size}}</th>
@@ -66,11 +66,11 @@ export default {
       if(this.select.indexOf(bill.order_d_id) == -1){
         this.select.push(bill.order_d_id)
       }
-    },confirmSend(){
-
-      axios.post('/confirm', {text:"dsasdadsa"}).then(response =>{
+    },
+    confirmSend(){
+      axios.post('/confirm', {bills:this.bills, select:this.select}).then(response =>{
         console.log(response)
-}).catch(error=>{
+      }).catch(error=>{
         console.log(error)
       })
     }
