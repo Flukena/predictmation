@@ -125,7 +125,7 @@ export default {
       comment:"",
       product_id: 0,
       basket:0,
-      sizeprices:{}
+      sizeprices:{},
     };
   },
   mounted() {
@@ -161,6 +161,7 @@ export default {
       }
       
     },
+
     countProduct(){
       axios.get("/product/count").then((response)=>{
         this.basket = response.data.count
