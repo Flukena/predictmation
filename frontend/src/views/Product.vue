@@ -46,23 +46,29 @@
   
   </div>
 </div>
-  <div class="modal" :class="{' is-active':edit}">
+  <!-- <div class="modal" :class="{' is-active':edit}">
   <div class="modal-background"></div>
   <div class="modal-card">
     <header class="modal-card-head">
       <p class="modal-card-title" >Edit</p>
       <button class="delete" @click="edit = false" aria-label="close"></button>
     </header>
-    <section class="modal-card-body">
+    <section class="modal-card-body"> -->
       <!-- Content ... -->
-      <input type="image" src="" alt="">
+  <!-- <div class="field">
+    <label class="label">Name</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Text input">
+    </div>
+  </div>
+
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success">Save changes</button>
+      <button class="button is-success" @click="saveedit()">Save changes</button>
       <button class="button" @click="edit = false">Cancel</button>
     </footer>
   </div>
-</div>
+</div> -->
 
     <div class="columns container-fluid m-0" style="display: grid;
   grid-template-columns: 30% 30% 30% 30%;">
@@ -71,7 +77,7 @@
           <div class="card-image" >
             <figure class="image is-4by3" style="margin-bottom: -7px;">
               <img
-                src="https://acuisineth.com/app/uploads/2020/07/Apple-Cinnamon-Cake-12-1024x683.jpg"
+                :src="product.product_img"
                 alt=""
                 style="
                   border-top-left-radius: 20%;
@@ -89,7 +95,7 @@
             <p><span class="size"> Size</span>: S M L</p>
             <!-- <p><span class="color:green">Price</span>: 45-55 บาท </p> -->
             </div>
-              <div class="button" @click="edit = true" v-if="$props.user.role == 'admin'">Edit</div>
+              <!-- <div class="button" @click="edit = true" v-if="$props.user.role == 'admin'">Edit</div> -->
             
           </div>
         </div>
@@ -141,7 +147,7 @@ export default {
       product_id: 0,
       basket:0,
       sizeprices:{},
-      edit:false
+      edit:false,
     };
   },
   mounted() {
@@ -177,7 +183,9 @@ export default {
       }
       
     },
-
+    selectImages(event) {
+      this.images = event.target.files;
+    },
     countProduct(){
       axios.get("/product/count").then((response)=>{
         this.basket = response.data.count
@@ -187,6 +195,23 @@ export default {
       axios.get(`/product/size/${this.name}`).then(response =>{
       this.sizeprices = response.data
 
+      })
+    },
+
+
+    
+    saveedit(){
+              let formData = new FormData();
+      formData.append("title", this.titleBlog);
+      formData.append("content", this.contentBlog);
+      formData.append("pinned", this.pinnedBlog ? 1 : 0);
+      formData.append("status", "01");
+      formData.append("myImage",this.images)
+
+      axios.put('/product/edit/1', formData).then(response =>{
+        console.log(response)
+      }).catch(error=>{
+        console.log(error)
       })
     }
   },
