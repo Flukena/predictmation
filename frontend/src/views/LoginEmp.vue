@@ -74,7 +74,7 @@
   </div>
 </template>
 <script>
-import { required, minLength } from "vuelidate/lib/validators";
+import { required, minLength, maxLength } from "vuelidate/lib/validators";
 import axios from "@/plugins/axios";
 export default {
   data() {
@@ -87,7 +87,8 @@ export default {
   validations: {
     username: {
       required,
-      minLength: minLength(1),
+      minLength: minLength(5),
+      maxLength: maxLength(20),
       complex3(value) {
         if (value.length < 5) {
           return false;
