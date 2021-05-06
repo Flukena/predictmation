@@ -28,7 +28,7 @@ const routes = [
       name:'emp',
       component:() =>import('../views/LoginEmp')
     },{
-      path:'/billemployee',
+      path:'/bill',
       name:'bill',
       component:() => import('../views/Billemployee.vue')
     },{
@@ -57,7 +57,6 @@ const routes = [
       alert("You've already logged in")
       next({ path: '/'})
     }
-     
        next()
      })
 
