@@ -2,6 +2,8 @@ const express = require("express");
 const pool = require("../config");
 const {isLoggedIn} = require('../middlewares');
 router = express.Router();
+const fs = require("fs");
+const multer = require("multer");
 
 router.get("/product", async (req, res, next)=>{
     const conn = await pool.getConnection();
@@ -99,6 +101,31 @@ router.get('/product/size/:product_name', isLoggedIn, async(req, res, next)=>{
         conn.rollback()
         res.status(400).json(error.toString())
     }
+})
+
+
+
+// const storage = multer.diskStorage({
+//     destination: function (req, file, callback) {
+//       callback(null, "./static/uploads");
+//     },
+//     filename: function (req, file, callback) {
+//       callback(
+//         null,
+//         file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+//       );
+//     },
+//   });
+
+//   const upload = multer({ storage: storage });
+
+router.put('/product/edit/:product_id', isLoggedIn, async(req, res, next)=>{
+    // const file = req.files;
+    // let pathArray = [];
+  
+    // if (!file) {
+    //   return res.status(400).json({ message: "Please upload a file" });
+    // }
 })
 
 
