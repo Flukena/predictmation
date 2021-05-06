@@ -214,7 +214,7 @@ div .home_img{
 
 #birthday {
     font-family: Bahnschrift;
-    background-color: rgb(146, 104, 26);
+    background-image: linear-gradient(to top, rgb(27, 27, 27), rgb(177, 131, 78));
     color: rgb(255, 255, 255);
     width: 205px;
     border-radius: 100cm;

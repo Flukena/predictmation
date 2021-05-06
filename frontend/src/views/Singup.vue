@@ -1,89 +1,215 @@
   <template>
-
-  <div class="column is-2 is-offset-5" style="height:900px" id="singupwall">
-    
-    <form class="box" style="margin-top:-75px; width:22%">
-      <label for="" class="for" style="font-size: 40px; margin-left: 10%;">Become a member</label><br />
+  <div class="column is-2 is-offset-5" style="height: 900px" id="singupwall">
+    <form class="box" style="margin-top: -75px; width: 22%">
+      <label for="" class="for" style="font-size: 40px; margin-left: 10%"
+        >Become a member</label
+      ><br />
       <div class="column is-2"></div>
-      
 
-      <div class="field" >
+      <div class="field">
         <div class="control">
-          <input class="input" type="text" v-model="username" placeholder="Username" />
+          <input
+            class="input"
+            type="text"
+            v-model="$v.username.$model"
+            :class="{ 'is-danger': $v.username.$error }"
+            placeholder="Username"
+          />
         </div>
+        <template v-if="$v.username.$error">
+          <p class="help is-danger" id="help" v-if="!$v.username.$complex3">
+            * At least 5 characters.
+          </p>
+        </template>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="password" v-model="password" placeholder="Password" />
+          <input
+            class="input"
+            type="password"
+            v-model="$v.password.$model"
+            :class="{ 'is-danger': $v.password.$error }"
+            placeholder="Password"
+          />
         </div>
+        <template v-if="$v.password.$error">
+          <p class="help is-danger" id="help" v-if="!$v.password.$complex">
+            * At least 8 characters.
+          </p>
+          <p class="help is-danger" id="help" v-if="!$v.password.$complex2">
+            * Contain lowercase, uppercase and numbers.
+          </p>
+        </template>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="password" v-model="confirm_password" placeholder="Confirm Password" />
+          <input
+            class="input"
+            type="password"
+            v-model="$v.confirm_password.$model"
+            :class="{ 'is-danger': $v.confirm_password.$error }"
+            placeholder="Confirm Password"
+          />
         </div>
+        <template v-if="$v.confirm_password.$error">
+          <p
+            class="help is-danger"
+            id="help"
+            v-if="!$v.confirm_password.$sameAs"
+          >
+            * Password incorrect.
+          </p>
+        </template>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="text" v-model="firstname" placeholder="Firstname" />
+          <input
+            class="input"
+            type="text"
+            v-model="$v.firstname.$model"
+            :class="{ 'is-danger': $v.firstname.$error }"
+            placeholder="Firstname"
+          />
         </div>
+        <template v-if="$v.firstname.$error">
+          <p class="help is-danger" id="help" v-if="!$v.firstname.$first">
+            * Firstname cannot contain numbers.
+          </p>
+        </template>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="text" v-model="lastname" placeholder="Lastname" />
+          <input
+            class="input"
+            type="text"
+            v-model="$v.lastname.$model"
+            :class="{ 'is-danger': $v.lastname.$error }"
+            placeholder="Lastname"
+          />
         </div>
+        <template v-if="$v.lastname.$error">
+          <p class="help is-danger" id="help" v-if="!$v.lastname.$last">
+            * Lastname cannot contain numbers.
+          </p>
+        </template>
       </div>
 
-      <form >
+      <form>
         <label for="sex" class="sex"></label>
-        <select name="sex" v-model="sex" id="sex">
-          <option value="" style="color: black;">Choose gender</option>
-          <option value="no" style="color: black;">No gender</option>
-          <option value="male" style="color: black;">Male</option>
-          <option value="femail" style="color: black;">Female</option>
+        <select
+          name="sex"
+          v-model="$v.sex.$model"
+          :class="{ 'is-danger': $v.sex.$error }"
+          id="sex"
+        >
+          <option value="choose sex" style="color: black">Choose gender</option>
+          <option value="no" style="color: black">No gender</option>
+          <option value="male" style="color: black">Male</option>
+          <option value="femail" style="color: black">Female</option>
         </select>
+        <template v-if="$v.sex.$error">
+          <p class="help is-danger" id="help" v-if="!$v.sex.$sex">
+            * Required.
+          </p>
+        </template>
         <br /><br />
       </form>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="number" v-model="mobile" placeholder="Phone" />
+          <input
+            class="input"
+            type="number"
+            v-model="$v.mobile.$model"
+            :class="{ 'is-danger': $v.mobile.$error }"
+            placeholder="Phone"
+          />
         </div>
+        <template v-if="$v.mobile.$error">
+          <p class="help is-danger" id="help" v-if="!$v.mobile.$mobile">
+            * The phone number starts with 0 and must have 10 characters.
+          </p>
+        </template>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="email" v-model="email" placeholder="Email" />
+          <input
+            class="input"
+            type="email"
+            v-model="$v.email.$model"
+            :class="{ 'is-danger': $v.email.$error }"
+            placeholder="Email"
+          />
         </div>
+        <template v-if="$v.email.$error">
+          <p class="help is-danger" id="help" v-if="!$v.email.$email">
+            * Must be an email format.
+          </p>
+        </template>
       </div>
-            <div class="field">
+      <div class="field">
         <div class="control">
-          <input class="input" type="number" v-model="age" placeholder="age" />
+          <input
+            class="input"
+            type="number"
+            v-model="$v.age.$model"
+            :class="{ 'is-danger': $v.age.$error }"
+            placeholder="Age"
+          />
         </div>
+        <template v-if="$v.age.$error">
+          <p class="help is-danger" id="help" v-if="!$v.age.$email">
+            * Age not be less than 0.
+          </p>
+        </template>
       </div>
       <form action="">
-          <label for="" class="br">Date of birth </label>
-        <input style="width: 100%; margin-top:10px; background-image: linear-gradient(to top, rgb(27, 27, 27), rgb(177, 131, 78));" type="date" v-model="birth" id="birthday" name="birthday" value="asdas"/>
+        <label for="" class="br">Date of birth </label>
+        <input
+          style="
+            width: 100%;
+            margin-top: 10px;
+            border-style: hidden;
+            background-image: linear-gradient(
+              to top,
+              rgb(27, 27, 27),
+              rgb(177, 131, 78)
+            );
+          "
+          type="date"
+          v-model="$v.birth.$model"
+                :class="{ 'is-danger': $v.birth.$error }" 
+          id="birthday"
+          name="birthday"
+          value=""
+        />
+        <template v-if="$v.birth.$error">
+          <p class="help is-danger" id="help" v-if="!$v.birth.$birth">
+            * Required.
+          </p>
+        </template>
       </form>
- 
+
       <div class="column is-2"></div>
-      <button class="button is-black" style="width: 100%" @click="submit()">Sing up</button>
+      <button class="button is-black" style="width: 100%" @click="submit()">
+        Sing up
+      </button>
     </form>
-</div>
- 
+  </div>
 </template>
 <script>
-import axios from '@/plugins/axios'
+import axios from "@/plugins/axios";
 import {
   required,
   email,
   helpers,
   minLength,
   maxLength,
-  sameAs,
 } from "vuelidate/lib/validators";
 
 function mobile(value) {
@@ -105,11 +231,11 @@ export default {
       confirm_password: "",
       email: "",
       mobile: "",
-      sex:"",
+      sex: "choose sex",
       firstname: "",
       lastname: "",
-      birth:"",
-      age:""
+      birth: "",
+      age: "",
     };
   },
   methods: {
@@ -127,24 +253,23 @@ export default {
           mobile: this.mobile,
           firstname: this.firstname,
           lastname: this.lastname,
-          sex:this.sex,
-          birth:this.birth,
-          age:this.age
-
+          sex: this.sex,
+          birth: this.birth,
+          age: this.age,
         };
 
         axios
           .post("/user/singup", data)
           .then((res) => {
             alert("Sign up Success");
-            this.$router.push({path: '/user/login'})
-            res.status(200)
-              this.$router.push({path: '/user/login'})
+            this.$router.push({ path: "/user/login" });
+            res.status(200);
+            this.$router.push({ path: "/user/login" });
           })
           .catch((err) => {
-            console.log(data)
-            alert(err.response.data)
-            console.log(err)
+            console.log(data);
+            alert(err.response.data);
+            console.log(err);
           });
       }
     },
@@ -164,7 +289,13 @@ export default {
       complex: complexPassword,
     },
     confirm_password: {
-      sameAs: sameAs("password"),
+      required,
+      sameAs(value) {
+        if (value === this.password) {
+          return true;
+        }
+        return false;
+      },
     },
     username: {
       required: required,
@@ -173,11 +304,42 @@ export default {
     },
     firstname: {
       required: required,
+      first(value) {
+        if (!value.match(/[0-9]/)) {
+          return true;
+        }
+        return false;
+      },
     },
     lastname: {
       required: required,
+      last(value) {
+        if (!value.match(/[0-9]/)) {
+          return true;
+        }
+        return false;
+      },
+    },
+    age: {
+      required,
+      age(value) {
+        if (value < 1) {
+          return false;
+        }
+        return true;
+      },
+    },
+    sex: {
+      sex(value) {
+        if (value === "choose sex") {
+          return false;
+        }
+        return true;
+      },
+    },
+    birth: {
+
     },
   },
 };
-
 </script>
