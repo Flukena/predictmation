@@ -2,8 +2,8 @@ const express = require("express");
 const pool = require("../config");
 const {isLoggedIn} = require('../middlewares');
 router = express.Router();
-const fs = require("fs");
-const multer = require("multer");
+// const fs = require("fs");
+// const multer = require("multer");
 
 router.get("/product", async (req, res, next)=>{
     const conn = await pool.getConnection();
@@ -119,13 +119,28 @@ router.get('/product/size/:product_name', isLoggedIn, async(req, res, next)=>{
 
 //   const upload = multer({ storage: storage });
 
-router.put('/product/edit/:product_id', isLoggedIn, async(req, res, next)=>{
+// router.put('/product/edit/:product_id', isLoggedIn, async(req, res, next)=>{
     // const file = req.files;
     // let pathArray = [];
   
     // if (!file) {
     //   return res.status(400).json({ message: "Please upload a file" });
     // }
+// })
+router.put('/paid/:cart_id', async(req, res)=>{
+    const conn = await pool.getConnection();
+    await conn.beginTransaction();
+    try{
+        await con.query('UPDATE cart set paid = ? where cart_id', [1, req.params.cart_id])
+        conn.commit()
+        conn.status(200).send("ok")
+    }catch(error){
+        conn.rollback()
+        console.log(error)
+        res.status(400).json(error.toString());
+    }finally{
+        conn.release()
+      }
 })
 
 

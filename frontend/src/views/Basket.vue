@@ -69,7 +69,7 @@
               <option value="">True wallet</option>
             </select>
             <button
-              id="paymentbut"
+              id="paymentbut" @click="paid(basket)"
               style="position: relative; left: 160px; top: -55px"
             >
               Paid
@@ -126,7 +126,13 @@ export default {
     async deleteItems(order_id) {
       await axios.delete(`/basket/${order_id}`);
       
-    },
+    },paid(basket){
+      axios.put(`/paid/${basket.cart_id}`).then(response=>{
+        console.log(response)
+      }).catch(error=>{
+        console.log(error)
+      })
+    }
   },
 };
 </script>
