@@ -332,7 +332,7 @@ div.pro_img{
     border-style: outset;
     color: rgb(255, 255, 255);
     position: absolute;
-    top: 780px;
+    top: 800px;
     left: 29%;
     width: 4%;
     height: 5%;
@@ -347,7 +347,7 @@ div.pro_img{
     border-style: outset;
     color: rgb(255, 255, 255);
     position: absolute;
-    top: 780px;
+    top: 800px;
     left: 58%;
     width: 13%;
     height: 5%;
@@ -493,4 +493,17 @@ div .content{
     margin-left: 0%;
     margin-top: 17px;
     margin-bottom: 0px;
+}
+
+#billempwall {
+    background-image: url("https://www.bigwheels.my/wp-content/uploads/2018/09/MAN_TGS.jpg");
+    width: 100%;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 17px;
+    margin-bottom: 0px;
+}
+
+#positionbutbill {
+    margin-top: 50px;
 }

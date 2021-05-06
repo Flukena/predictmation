@@ -1,82 +1,36 @@
 <template>
-  <div class="column is-2 is-offset-5" style="height:800px">
+  <div class="column is-2 is-offset-5" style="height:830px" id="billempwall">
     <form class="boxbill" style="height: 60%;">
-      <div class="columns" style="background-color: black;">
-        <div class="column">
-          <h1 id="billemtitlestyle">Order list</h1>
-        </div>
-
-        <div class="column">
-          <h1 id="billemtitlestyle">Price (฿)</h1>
-        </div>
-         <div class="column">
-          <h1 id="billemtitlestyle">Date</h1>
-        </div>
-        <div class="column">
-          <h1 id="billemtitlestyle">Time</h1>
-        </div>
-        <div class="column">
-          <h1 id="billemtitlestyle">Paid</h1>
-        </div>
-      </div><br>
-      <div class="columns">
-        <div class="column">
-          <h1 id="billemstyle">Late</h1>
-        </div>
-
-        <div class="column">
-          <h1 id="billemstyle">15</h1>
-        </div>
-         <div class="column">
-          <h1 id="billemstyle">3/4/2564</h1>
-        </div>
-        <div class="column">
-          <h1 id="billemstyle">10:50</h1>
-        </div>
-        <div class="column">
-          <h1 id="billemstyle">Yes</h1>
-        </div>
-      </div><br>
-      <div class="columns">
-        <div class="column">
-          <h1 id="billemstyle">Green tea</h1>
-        </div>
-
-        <div class="column">
-          <h1 id="billemstyle">20</h1>
-        </div>
-         <div class="column">
-          <h1 id="billemstyle">27/4/2564</h1>
-        </div>
-        <div class="column">
-          <h1 id="billemstyle">23:15</h1>
-        </div>
-        <div class="column">
-          <h1 id="billemstyle">No</h1>
-        </div>
-      </div><br>
-      <div class="columns">
-        <div class="column">
-          <h1 id="billemstyle">Mocca</h1>
-        </div>
-
-        <div class="column">
-          <h1 id="billemstyle">20</h1>
-        </div>
-         <div class="column">
-          <h1 id="billemstyle">1/5/2564</h1>
-        </div>
-        <div class="column">
-          <h1 id="billemstyle">12:45</h1>
-        </div>
-        <div class="column">
-          <h1 id="billemstyle">Yes</h1>
-        </div>
-      </div>
+      <table style="width:100%; text-align: left;">
+            <tr style="background-color:black; font-family: Bahnschrift;">
+              <th style="color:white;padding:7px">Order list</th>
+              <th style="color:white;padding:7px">Amount</th>
+              <th style="color:white;padding:7px">Price (฿)</th>
+              <th style="color:white;padding:7px">Date</th>
+              <th style="color:white;padding:7px">Time</th>
+              <th style="color:white;padding:7px">Paid</th>
+            </tr>
+            <tr style=" font-family: Bahnschrift;" >
+              <th style="color:black;padding:7px;">KuyTee</th>
+              <th style="color:black;padding:7px">1</th>
+              <th style="color:black;padding:7px">0.5</th>
+              <th style="color:black;padding:7px">6/5/2564</th>
+              <th style="color:black;padding:7px">11:27</th>
+              <th style="color:black;padding:7px">No</th>
+            </tr>
+            <tr style=" font-family: Bahnschrift;" >
+              <th style="color:black;padding:7px;">KuyFluke</th>
+              <th style="color:black;padding:7px">1</th>
+              <th style="color:black;padding:7px">0.5</th>
+              <th style="color:black;padding:7px">6/5/2564</th>
+              <th style="color:black;padding:7px">11:27</th>
+              <th style="color:black;padding:7px">Yes</th>
+            </tr>
+          </table>
       
       
     </form>
-    <div>
+    <div id="positionbutbill">
     <button class="butbill" >Fix</button>
     <button class="butbillfix">Confirm order</button>
   </div>
