@@ -22,6 +22,22 @@ router.get("/basket", isLoggedIn, async (req, res, next)=>{
 
     }
 })
+router.delete('/basket/:order_id', async(req, res, next)=>{
+    const conn = await pool.getConnection();
+    await conn.beginTransaction();
+    const order_id = req.params.order_id
+    // console.log(order_id)
+    try{
+        console.log(order_id)
+        await conn.query('DELETE FROM order_detail where order_d_id = ?', [order_id])
+        conn.commit()
+        res.status(400).send("ok")
+    }catch(error){
+        console.log(error)
+        conn.rollback()
+        res.json(error.toString())
 
+    }
+} )
 
 exports.router = router;

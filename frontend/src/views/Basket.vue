@@ -11,7 +11,7 @@
               <th style="color:white;padding:7px">Price (฿)</th>
             </tr>
             <tr style=" font-family: Bahnschrift;" v-for="basket in baskets" :key="basket.order_d_id">
-              <td style="color:black;padding:7px;">{{basket.product_name}}({{basket.product_size}}) <span  class="delete">delete</span></td>
+              <td style="color:black;padding:7px;">{{basket.product_name}}({{basket.product_size}}) <span @click="deleteItems(basket.order_d_id)"  class="delete">delete</span></td>
               <td style="color:black;padding:7px">{{basket.unit}}</td>
               <td style="color:black;padding:7px">{{basket.price}}</td>
             </tr>
@@ -96,6 +96,8 @@ export default {
       baskets:{},
       total:0,
       ftotal:0,
+      order_id:"",
+
     }
   },
   mounted(){
@@ -115,7 +117,16 @@ export default {
         console.log(error)
       })
 
+    },    deleteItems(order_id){
+      axios.delete(`/basket/${order_id}`).then((response)=>{
+        console.log(response)
+
+        // this.onBasket()
+        // this.$router.push({path:'/user/basket'})
+      }).catch(error =>{
+        console.log(error)
+      })
     },
-  }
+  },
 }
 </script>

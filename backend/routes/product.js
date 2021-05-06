@@ -97,4 +97,5 @@ router.get('/product/size/:product_name', isLoggedIn, async(req, res, next)=>{
     }
 })
 
+
 exports.router = router;

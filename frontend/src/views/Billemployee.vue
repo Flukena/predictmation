@@ -2,7 +2,7 @@
   <div class="column is-2 is-offset-5" style="height:830px" id="billempwall">
     <form class="boxbill" style="height: 60%;">
       <table style="width:100%; text-align: left;">
-            <tr style="background-color:black; font-family: Bahnschrift;">
+            <tr style="background-color:black; font-family: Bahnschrift;" >
               <th style="color:white;padding:7px">Order list</th>
               <th style="color:white;padding:7px">Amount</th>
               <th style="color:white;padding:7px">Price (฿)</th>
