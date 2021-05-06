@@ -2,7 +2,6 @@
   <div>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        
         <a
           role="button"
           class="navbar-burger"
@@ -19,28 +18,13 @@
       <div class="navbar-menu">
         <div class="navbar-start mt-4">
           <router-link to="/">
-            <a
-              class="navbar-item button"
-              
-            >
-              Main</a
-            ></router-link
+            <a class="navbar-item button"> Main</a></router-link
           >
           <router-link to="/product">
-            <a
-              class="navbar-item button"
-              
-            >
-              Our products</a
-            >
+            <a class="navbar-item button"> Our products</a>
           </router-link>
           <router-link to="aboutus">
-            <a
-              class="navbar-item button"
-              
-            >
-              About us</a
-            >
+            <a class="navbar-item button"> About us</a>
           </router-link>
         </div>
 
@@ -59,22 +43,17 @@
             </div>
           </div>
         </div>
-        <div class="navbar-end" v-if="$props.user != null">
-          <div class="navbar-item">
- 
 
+        <div class="navbar-end" v-if="$props.user != null">
+          <div class="navbar-item" >
 
             <div class="buttons">
-              <a
-                class="button is-rounded is-medium"
-                id="singlog2"
-                @click="logout()">
-                
-                {{ user.cus_username }}
-                Logout  
-              </a>
+              <a class="button is-rounded is-medium" v-if="$props.user.role == 'admin' ">admin</a>
+              <a class="button is-rounded is-medium"  @click="logout()"> {{ user.cus_username }} Logout </a>
+              
             </div>
           </div>
+          
         </div>
       </div>
     </nav>
@@ -91,7 +70,7 @@ export default {
   methods: {
     showUser() {
       console.log(this.user);
-      console.log(this.user );
+      console.log(this.user);
     },
     logout() {
       localStorage.removeItem("token");

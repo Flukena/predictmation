@@ -42,8 +42,11 @@ const routes = [
       component:() => import('../views/Aboutus.vue')
     }
   ]
+
   
   const router = new VueRouter({ routes })
+  
+
   
     router.beforeEach((to, from, next) => {
     const isLoggedIn = !!localStorage.getItem('token')
