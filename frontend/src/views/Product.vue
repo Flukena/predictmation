@@ -43,9 +43,26 @@
             <p style="margin-left:18rem" class="label ">
     ราคาสินค้า : {{price}}</p>
     </footer>
+  
   </div>
 </div>
-
+  <div class="modal" :class="{' is-active':edit}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title" >Edit</p>
+      <button class="delete" @click="edit = false" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+      <input type="image" src="" alt="">
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save changes</button>
+      <button class="button" @click="edit = false">Cancel</button>
+    </footer>
+  </div>
+</div>
 
     <div class="columns container-fluid m-0" style="display: grid;
   grid-template-columns: 30% 30% 30% 30%;">
@@ -72,6 +89,7 @@
             <p><span class="size"> Size</span>: S M L</p>
             <!-- <p><span class="color:green">Price</span>: 45-55 บาท </p> -->
             </div>
+              <div class="button" @click="edit = true" v-if="$props.user.role == 'admin'">Edit</div>
             
           </div>
         </div>
@@ -85,10 +103,7 @@
               width: 100%;
               border-style: hidden;
               height: 30px;
-            " @click="name = product.product_name, modalDetail = true,product_id= product.product_id, querySizePrice()"
-          >
-           Details Buy
-          </button>
+            " @click="name = product.product_name, modalDetail = true,product_id= product.product_id, querySizePrice()"> Details Buy</button>
         </div>
       </div>
     </div>
@@ -126,6 +141,7 @@ export default {
       product_id: 0,
       basket:0,
       sizeprices:{},
+      edit:false
     };
   },
   mounted() {

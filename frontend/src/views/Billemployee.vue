@@ -36,7 +36,7 @@
 
     <div id="positionbutbill">
 
-    <button class="butbillfix">Confirm order</button>
+    <button class="butbillfix" @click="confirmSend()">Confirm order</button>
   </div>
   </div>
 </template>
@@ -50,6 +50,7 @@ export default {
     }
   },mounted(){
       this.queryBill()
+      this.confirmSend()
   },methods:{
     queryBill(){
       axios.get('/bill').then(response=>{
