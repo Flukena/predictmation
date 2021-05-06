@@ -68,7 +68,6 @@ export default {
   },
   methods: {
     submit() {
-      console.log("test")
       const data = {
         username: this.username,
         password: this.password,

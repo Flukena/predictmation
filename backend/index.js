@@ -22,10 +22,12 @@ const indexRouter = require('./routes/index')
 const userRouter = require('./routes/user')
 const productRouter = require('./routes/product')
 const basketRouter = require('./routes/basket')
+const billRouter = require('./routes/billemployee')
 app.use(productRouter.router)
 app.use(indexRouter.router)
 app.use(userRouter.router)
 app.use(basketRouter.router)
+app.use(billRouter.router)
 
 const PORT  = process.env.PORT || 3000
 // router.post('/', async function(req, res, next){

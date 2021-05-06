@@ -168,8 +168,8 @@ export default {
       })
     },
     querySizePrice(){
-      axios.get(`/product/size/${this.name}`).then(res =>{
-      this.sizeprices = res.data
+      axios.get(`/product/size/${this.name}`).then(response =>{
+      this.sizeprices = response.data
 
       })
     }

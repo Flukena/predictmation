@@ -36,3 +36,23 @@
   </div>
   </div>
 </template>
+<script>
+  // import axios from "@/plugins/axios";
+
+export default {
+  data(){
+    return{
+      Bill:{}
+    }
+  },mounted(){
+      this.queryBill()
+  },methods:{
+    // queryBill(){
+    //   axios.get('/bill', async(req, res)=>{
+    //     console.log(res)
+    //   })
+    // }
+  }
+
+}
+</script>
