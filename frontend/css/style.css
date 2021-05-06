@@ -2,17 +2,17 @@ a.navbar-item, .navbar-link{
     margin-left: 1rem;
     font-family: Bahnschrift;
     color: rgb(0, 0, 0);
-    font-weight: 1000;
-    font-size: 24px;
-    text-shadow: -3px 4px 3px rgb(163, 131, 62);
+    font-weight: 400;
+    font-size: 20px;
+    text-shadow: -3px 4px 5px rgb(163, 131, 62);
+    margin-top: 5px;
     
 }nav .navbar-end{
     font-family: Bahnschrift;
     
 }
 nav .navbar-menu{
-    
-    border-top: 20px;
+
     width: 500px;
     
 }
@@ -23,7 +23,11 @@ nav .navbar-menu{
     height: 87px;
     
 }
-
+.navbar {
+    background-image: url("https://data.1freewallpapers.com/download/coffee-coffee-beans-roasted-grains-2560x1600.jpg");
+    width: 100%;
+    height: 95px;
+}
 
 #singlog {
     background-color: black;
@@ -33,9 +37,9 @@ nav .navbar-menu{
     font-size: 22px;
     left: -50%;
     box-shadow: -10px 10px 15px 0 rgba(0, 0, 0, 0.267);
-    margin-top: 20px;
+    margin-top: 0px;
     border-color: rgb(250, 203, 142);
-    border-width: thick;
+    border-width: thin;
     
 }
 #singlog:hover {
@@ -51,11 +55,11 @@ nav .navbar-menu{
     font-family: Bahnschrift;
     font-size: 22px;
     left: -50%;
-    margin-top: 20px;
+    margin-top: 0px;
     box-shadow: -10px 10px 15px 0 rgba(0, 0, 0, 0.267);
     
     border-color: rgb(0, 0, 0);
-    border-width: thick;
+    border-width: thin;
 }
 #singlog2:hover {
     background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
@@ -72,21 +76,28 @@ nav{
 }
 a.navbar-item:hover{
     
-    color:  rgb(0, 0, 0);
-    background-image: linear-gradient(to top, rgb(255, 255, 255), rgb(62, 107, 24));
+    color:  rgb(253, 253, 253);
+    background-image: linear-gradient(to bottom, rgb(68, 43, 11), rgb(136, 104, 17));
     font-weight: 1000;
     font-size: 25px;
-    text-shadow: 0 0 3px #ffffff, 0 0 5px #cc9632;
+    text-shadow: 0 0 3px #000000, 0 0 5px #eed7ac;
     border-style: solid;
+    border-width: 3px;
     border-color: burlywood;
     border-bottom: rgb(0, 255, 76);
     box-shadow: -30px 10px 30px 0 rgba(0, 0, 0, 0.267), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
-    
+    border-top-right-radius: 80%;
+    border-bottom-left-radius: 80%;
 }
 .button.navbar-item{
     width: 150px;
     border:none;
-    opacity: 80%;
+    opacity: 100%;
+    color: rgb(255, 255, 255);
+    border-color: wheat;
+    border-style: solid;
+    border-width: 1px;
+    background-image: linear-gradient(to bottom, rgb(54, 35, 9), rgb(116, 86, 6));
 }.button.navbar-item:hover{
     transition: all .1s;
 
@@ -148,8 +159,8 @@ a.navbar-item:hover{
 
 #basketwall {
     background-image: url("https://wallpaperaccess.com/full/1737168.jpg");
-    margin-top: 17px;
-    margin-bottom: 0px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .forbasket {
@@ -235,7 +246,7 @@ div .home_img{
 }
 .Baskets {
     position: fixed;
-    top: 90px;
+    top: 120px;
     left: 87%;
     border: 3px solid #000000;
     padding: 0.5%;
@@ -431,7 +442,7 @@ div.pro_img{
     gap: 3px;
     grid-auto-rows: minmax(100px, auto);
     margin-bottom: 0px;
-    margin-top: 15px;
+    margin-top: 3px;
   }
   .one {
     grid-column: 1 ;
@@ -483,7 +494,8 @@ div .content{
     width: 100%;
     height: auto;
     margin-left: 0%;
-    margin-top: 17px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 #loginwall {
@@ -491,8 +503,8 @@ div .content{
     width: 100%;
     height: auto;
     margin-left: 0%;
-    margin-top: 17px;
-    margin-bottom: 0px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 #billempwall {
@@ -500,8 +512,8 @@ div .content{
     width: 100%;
     height: auto;
     margin-left: 0%;
-    margin-top: 17px;
-    margin-bottom: 0px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 #positionbutbill {

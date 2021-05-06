@@ -21,10 +21,7 @@
           <router-link to="/">
             <a
               class="navbar-item button"
-              style="
-                border-top-right-radius: 80%;
-                border-bottom-left-radius: 80%;
-              "
+              
             >
               Main</a
             ></router-link
@@ -32,10 +29,7 @@
           <router-link to="/product">
             <a
               class="navbar-item button"
-              style="
-                border-top-right-radius: 80%;
-                border-bottom-left-radius: 80%;
-              "
+              
             >
               Our products</a
             >
@@ -43,10 +37,7 @@
           <router-link to="aboutus">
             <a
               class="navbar-item button"
-              style="
-                border-top-right-radius: 80%;
-                border-bottom-left-radius: 80%;
-              "
+              
             >
               About us</a
             >
