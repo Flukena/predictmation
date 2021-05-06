@@ -519,3 +519,10 @@ div .content{
 #positionbutbill {
     margin-top: 50px;
 }
+
+#help{
+    color: rgb(209, 61, 61);
+    font-family: Bahnschrift;
+    line-height: 15px;
+    font-weight: 400;
+}
