@@ -29,7 +29,7 @@ async function isLoggedIn (req, res, next) {
             'FROM cus_user WHERE cus_id = ?', [token.user_id]
         )
         req.user = users[0]
-        console.log("isLogin: "+req.user)
+        console.log("isLogin User ID: "+req.user.cus_id)
         next()
     }
 
