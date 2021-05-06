@@ -70,9 +70,7 @@
         </div>
         <div class="navbar-end" v-if="$props.user != null">
           <div class="navbar-item">
-            <strong style="margin-right: 5rem"
-              >Username : {{ user.cus_username }}</strong
-            >
+ 
 
 
             <div class="buttons">

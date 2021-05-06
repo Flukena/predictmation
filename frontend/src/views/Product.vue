@@ -23,15 +23,10 @@
   </div>
   <div class="dropdown-menu "  id="dropdown-menu" role="menu">
     <div class="dropdown-content">
-      <a href="#" class="dropdown-item" @click="size='S', dropdown_size = false, price = 35,error_dropdown =false">
-        S (ราคา 35 บาท)
+      <a href="#" v-for="sizeprice in sizeprices" :key="sizeprice.product_price" class="dropdown-item" @click="size= sizeprice.product_size, dropdown_size = false, price = sizeprice.product_price,error_dropdown =false">
+        {{sizeprice.product_size}} (ราคา {{sizeprice.product_price}} บาท)
       </a>
-            <a href="#" class="dropdown-item" @click="size='M', dropdown_size = false, price = 45, error_dropdown =false">
-        M (ราคา 45 บาท)
-      </a>
-            <a href="#" class="dropdown-item" @click="size='L',dropdown_size = false, price = 55, error_dropdown =false">
-        L (ราคา 55 บาท)
-      </a>
+
     </div>
   </div>
   <div class="w-80">
@@ -75,7 +70,7 @@
             <br>
             <div class="content">
             <p><span class="size"> Size</span>: S M L</p>
-            <p><span class="color:green">Price</span>: 45-55 บาท </p>
+            <!-- <p><span class="color:green">Price</span>: 45-55 บาท </p> -->
             </div>
             
           </div>
@@ -90,7 +85,7 @@
               width: 100%;
               border-style: hidden;
               height: 30px;
-            " @click="name = product.product_name, modalDetail = true,product_id= product.product_id "
+            " @click="name = product.product_name, modalDetail = true,product_id= product.product_id, querySizePrice()"
           >
            Details Buy
           </button>
@@ -129,12 +124,13 @@ export default {
       error_dropdown: false,
       comment:"",
       product_id: 0,
-      basket:0
+      basket:0,
+      sizeprices:{}
     };
   },
   mounted() {
     this.queryProduct();
-    this.countProduct()
+    this.countProduct();
   },
   methods: {
     queryProduct() {
@@ -168,6 +164,12 @@ export default {
     countProduct(){
       axios.get("/product/count").then((response)=>{
         this.basket = response.data.count
+      })
+    },
+    querySizePrice(){
+      axios.get(`/product/size/${this.name}`).then(res =>{
+      this.sizeprices = res.data
+
       })
     }
   },

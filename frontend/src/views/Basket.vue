@@ -10,16 +10,12 @@
               <th style="color:white;padding:7px">Amount</th>
               <th style="color:white;padding:7px">Price</th>
             </tr>
-            <tr style=" font-family: Bahnschrift;" >
-              <th style="color:black;padding:7px;">KuyTee</th>
-              <th style="color:black;padding:7px">1</th>
-              <th style="color:black;padding:7px">0.5</th>
+            <tr style=" font-family: Bahnschrift;" v-for="basket in baskets" :key="basket.order_d_id">
+              <td style="color:black;padding:7px;">{{basket.product_name}}({{basket.product_size}}) <span  class="delete">delete</span></td>
+              <td style="color:black;padding:7px">{{basket.unit}}</td>
+              <td style="color:black;padding:7px">{{basket.price}}</td>
             </tr>
-            <tr style=" font-family: Bahnschrift;" >
-              <th style="color:black;padding:7px;">KuyFluke</th>
-              <th style="color:black;padding:7px">1</th>
-              <th style="color:black;padding:7px">0.01</th>
-            </tr>
+
           </table>
           
   <!--ลูปตรงนี้นะไอเหี้ยจีน-->        
@@ -29,10 +25,10 @@
           <div class="row" style="line-height: 0px;" id="totalstyle">
             <div class="columns">
             <div class="column">
-              <div style="margin-right: 300px">Orderlist</div>
+              <div style="margin-right: 328px">Total    </div>
             </div>
             <div class="column">
-              <div>xxxxx</div>
+              <div>{{total}} Bath</div>
             </div>
           </div>
           <div class="columns" style="color: #53B434">
@@ -49,7 +45,7 @@
               <div style="margin-right: 290px">FinalPrice</div>
             </div>
             <div class="column">
-              <div>xxxxx</div>
+              <div>{{ftotal}} Bath</div>
             </div>
           </div>
           </div>
@@ -97,7 +93,9 @@ import axios from "@/plugins/axios";
 export default {
   data() {
     return{
-      baskets:{}
+      baskets:{},
+      total:0,
+      ftotal:0,
     }
   },
   mounted(){
@@ -106,13 +104,18 @@ export default {
   methods:{
     onBasket(){
       axios.get('/basket').then(res =>{
-        console.log(res + "basket")
         this.baskets = res.data
+      console.log(this.baskets.length)
+      for(var i= 0; i < this.baskets.length;i++){
+        this.total += (this.baskets[i].unit * this.baskets[i].price)
+      }
+      this.ftotal = this.total
+        
       }).catch((error)=>{
         console.log(error)
       })
 
-    }
+    },
   }
 }
 </script>
