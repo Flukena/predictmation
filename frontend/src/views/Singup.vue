@@ -175,11 +175,6 @@
             width: 100%;
             margin-top: 10px;
             border-style: hidden;
-            background-image: linear-gradient(
-              to top,
-              rgb(27, 27, 27),
-              rgb(177, 131, 78)
-            );
           "
           type="date"
           v-model="$v.birth.$model"
@@ -338,8 +333,14 @@ export default {
       },
     },
     birth: {
-
+      birth (value) {
+        if (value === "") {
+          return false;
+        }
+        return true
+        },
+      },
     },
-  },
-};
+  };
+
 </script>

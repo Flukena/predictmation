@@ -21,7 +21,7 @@
             </div>
             <template v-if="$v.username.$error">
               <p class="help is-danger" id="help" v-if="!$v.username.$complex3">
-                * At least 5 characters.
+                * Invalid username.
               </p>
             </template>
           </div>
@@ -38,12 +38,10 @@
               />
             </div>
             <template v-if="$v.password.$error">
-              <p class="help is-danger" id="help" v-if="!$v.password.$complex">
-                * At least 8 characters.
+              <p class="help is-danger" id="help" v-if="!$v.password.$password">
+                * Invalid password.
               </p>
-              <p class="help is-danger" id="help" v-if="!$v.password.$complex2">
-                * Contain lowercase, uppercase and numbers.
-              </p>
+              
             </template>
           </div>
 
