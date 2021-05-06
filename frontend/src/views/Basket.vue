@@ -8,7 +8,7 @@
             <tr style="background-color:black; font-family: Bahnschrift;">
               <th style="color:white;padding:7px">Order list</th>
               <th style="color:white;padding:7px">Amount</th>
-              <th style="color:white;padding:7px">Price</th>
+              <th style="color:white;padding:7px">Price (฿)</th>
             </tr>
             <tr style=" font-family: Bahnschrift;" >
               <th style="color:black;padding:7px;">KuyTee</th>
