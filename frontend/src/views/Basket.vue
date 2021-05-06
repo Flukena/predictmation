@@ -125,7 +125,7 @@ export default {
     },
     async deleteItems(order_id) {
       await axios.delete(`/basket/${order_id}`);
-      this.$forceUpdate();
+      
     },
   },
 };

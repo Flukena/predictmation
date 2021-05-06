@@ -71,6 +71,8 @@ router.post("/user/singup", async function (req, res, next) {
   } catch (err) {
     console.log(err)
     return res.status(400).json(err);
+  }finally{
+    conn.release()
   }
 
   const cus_username = req.body.username

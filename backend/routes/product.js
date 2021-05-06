@@ -15,7 +15,9 @@ router.get("/product", async (req, res, next)=>{
         console.log("Product: ***###" + error.toString())
         conn.rollback()
         res.status(400).send(error.toString());
-    }
+    }finally{
+        conn.release()
+      }
 });
 router.put("/product/cart", isLoggedIn, async (req, res, next)=>{
     const conn = await pool.getConnection();
@@ -79,7 +81,9 @@ router.get('/product/count', isLoggedIn, async(req, res, next)=>{
         console.log(error)
         conn.rollback()
         res.status(400).json(error.toString())
-    }
+    }finally{
+        conn.release()
+      }
 })
 router.get('/product/size/:product_name', isLoggedIn, async(req, res, next)=>{
     const conn = await pool.getConnection();

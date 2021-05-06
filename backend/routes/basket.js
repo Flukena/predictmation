@@ -20,7 +20,9 @@ router.get("/basket", isLoggedIn, async (req, res, next)=>{
         conn.rollback()
         res.json(error.toString())
 
-    }
+    }finally{
+        conn.release()
+      }
 })
 router.delete('/basket/:order_id', async(req, res, next)=>{
     const conn = await pool.getConnection();
@@ -37,7 +39,9 @@ router.delete('/basket/:order_id', async(req, res, next)=>{
         conn.rollback()
         res.json(error.toString())
 
-    }
+    }finally{
+        conn.release()
+      }
 } )
 
 exports.router = router;

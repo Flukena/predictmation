@@ -9,6 +9,7 @@ router.get('/bill', async (req, res, next)=>{
     try{
         const [send_Ready] = await conn.query("select * from order_detail ")
         res.json(send_Ready)
+        conn.commit()
     }catch(error){
         conn.rollback()
         console.log(err)
