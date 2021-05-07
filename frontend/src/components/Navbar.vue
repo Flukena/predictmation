@@ -155,10 +155,20 @@ export default {
         'new_password':this.new_password,
         'confirm_new_password':this.confirm_new_password
       }
+
       console.log("password")
+      alert("รหัสผ่านของท่านได้รับการแก้ไข")
+      
       axios.put('/changepassword', data ).then(response=>{
         console.log(response)
-      }).catch(console.error())
+
+      }).catch(error =>{alert('ไม่สามารถเปลี่ยนรหัสได้')
+       console.log(error)})
+                  this.modal_password =false
+      this.password = ''
+      this.new_password = ''
+      this.confirm_new_password = ''
+
     }
   },
 };

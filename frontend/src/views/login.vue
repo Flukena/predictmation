@@ -135,6 +135,7 @@ export default {
         })
         .catch((error) => {
           this.error = error;
+          alert("Incorrent username or password")
           console.log(error);
         });
     },
