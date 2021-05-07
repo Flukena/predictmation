@@ -65,6 +65,8 @@ const signupSchema = Joi.object({
 router.post("/user/singup", async function (req, res, next) {
   const conn = await pool.getConnection();
   await conn.beginTransaction();
+  console.log("singup")
+
   try {
     await signupSchema.validateAsync(req.body, { aboutEarly: true });
     
@@ -86,6 +88,7 @@ router.post("/user/singup", async function (req, res, next) {
   const cus_age = req.body.age
   try{
     await conn.query(
+      
       'INSERT INTO customer(cus_firstname, cus_lastname, cus_email, cus_phone, cus_sex, cus_birthday, cus_age) ' +
       'VALUES (?, ?, ?, ?, ?,  ?, ?)',
       [cus_firstname, cus_lastname, cus_email, cus_phone, cus_sex, cus_birthday, cus_age]

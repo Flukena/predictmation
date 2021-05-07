@@ -80,7 +80,7 @@ export default {
     return {
       username: "",
       password: "",
-    };
+    }
   },
   validations: {
     username: {
@@ -117,6 +117,7 @@ export default {
       },
     },
   },
+  
 
   methods: {
     submit() {
