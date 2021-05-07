@@ -9,6 +9,7 @@ router.get('/bill', async (req, res, next)=>{
     await conn.beginTransaction();
     try{
         const [send_Ready] = await conn.query("select * from order_detail join cart using(cart_id) join customer using(cus_id) join product using(product_id)")
+        
 
         res.json(send_Ready)
         conn.commit()
@@ -61,12 +62,16 @@ router.post('/confirm', async (req, res) =>{
                // log ข้อมูลการส่งว่าส่งได้-ไม่ได้
                console.log('Message sent: %s', info.messageId);
             conn.query('update order_detail set ready = ? where order_d_id = ?', [1,select[i]])
+            conn.query('delete from order_detail where order_d_id = ?', [select[i]])
+            
     }
+     res.send("ส่งสำเสร็จ")
+
         conn.commit()
     }catch(error){
         conn.rollback()
         console.log(error)
-        res.status(400).json(error.toString());
+        res.status(400).send("ส่งไม่สำเร็จ");
     }finally{
         conn.release()
       }

@@ -33,6 +33,7 @@ router.put("/product/cart", isLoggedIn, async (req, res, next)=>{
     try{
         // console.log(cus_id)
         let cart_id = await conn.query('select cart_id from cart  where cus_id = ?',[cus_id])
+        
         let [dep] = await conn.query("select unit, order_d_id from order_detail join cart using(cart_id) where cus_id = ? and product_id = ?", [cus_id, product_id])
         console.log(dep)
         let check = true
@@ -127,21 +128,7 @@ router.get('/product/size/:product_name', isLoggedIn, async(req, res, next)=>{
     //   return res.status(400).json({ message: "Please upload a file" });
     // }
 // })
-router.put('/paid/:cart_id', async(req, res)=>{
-    const conn = await pool.getConnection();
-    await conn.beginTransaction();
-    try{
-        await con.query('UPDATE cart set paid = ? where cart_id', [1, req.params.cart_id])
-        conn.commit()
-        conn.status(200).send("ok")
-    }catch(error){
-        conn.rollback()
-        console.log(error)
-        res.status(400).json(error.toString());
-    }finally{
-        conn.release()
-      }
-})
+
 
 
 exports.router = router;

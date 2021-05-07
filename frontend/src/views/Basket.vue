@@ -26,7 +26,6 @@
             </tr>
           </table>
 
-          <!--ลูปตรงนี้นะไอเหี้ยจีน-->
 
           <div class="row" style="line-height: 0px;" id="totalstyle">
             <div class="columns">
@@ -39,10 +38,10 @@
             </div>
             <div class="columns" style="color: #53B434">
               <div class="column">
-                <div style="margin-right: 300px">Discount</div>
+                <div style="margin-right: 300px"> <p>Discount</p></div>
               </div>
               <div class="column">
-                <div>xxxxx</div>
+                <div>{{discunt}} Bath</div>
               </div>
             </div>
             <div class="columns">
@@ -50,7 +49,7 @@
                 <div style="margin-right: 290px">FinalPrice</div>
               </div>
               <div class="column">
-                <div>{{ ftotal }} Bath</div>
+                <div>{{ ftotal-discunt }} Bath</div>
               </div>
             </div>
           </div>
@@ -69,7 +68,7 @@
               <option value="">True wallet</option>
             </select>
             <button
-              id="paymentbut" @click="paid(basket)"
+              id="paymentbut" @click="paid()"
               style="position: relative; left: 160px; top: -55px"
             >
               Paid
@@ -101,10 +100,14 @@ export default {
       total: 0,
       ftotal: 0,
       order_id: "",
+      cart_id:0,
+      percent:1,
+      discunt:0
     };
   },
   mounted() {
     this.onBasket();
+    this.discount()
   },
   methods: {
     onBasket() {
@@ -113,9 +116,10 @@ export default {
         .then((res) => {
           console.log(res.data)
           this.baskets = res.data;
-          console.log(this.baskets.length);
+          this.cart_id = res.data[0].cart_id
           for (var i = 0; i < this.baskets.length; i++) {
             this.total += this.baskets[i].unit * this.baskets[i].price;
+
           }
           this.ftotal = this.total;
         })
@@ -125,13 +129,44 @@ export default {
     },
     async deleteItems(order_id) {
       await axios.delete(`/basket/${order_id}`);
+
       
-    },paid(basket){
-      axios.put(`/paid/${basket.cart_id}`).then(response=>{
+    },paid(){
+      if(this.baskets.length > 0){
+
+  axios.put(`/paid/${this.cart_id}`).then(response=>{
         console.log(response)
+        alert("คำสั่งซิ้อเสร็จสิ้น กรุณารอรับ email เพื่อมารับสินค้า");
+        this.$router.push({ path: "/" });
       }).catch(error=>{
         console.log(error)
       })
+      }else{
+        alert("กรุณาเลือกสินค้าก่อนโอนเงิน")
+        this.$router.push({ path: "/product" });
+      }
+    },
+    discount(){
+      axios.get('/basket/discount').then((response)=>{
+        const customer = response.data.customer
+        const discount = response.data.discount
+        var currentdate = new Date();
+        var year = currentdate.getFullYear()
+
+        var dateuser = ((customer[0].date_of_application).split('T')[0]).split('-')
+        var user_year =Number(dateuser[0])
+          var total = 0
+                  for (var i = 0; i < this.baskets.length; i++) {
+            total += this.baskets[i].unit * this.baskets[i].price;
+
+          }
+
+        if(year - user_year <= 1){
+          this.percent = (100- discount[0].spec_disc)/100
+          this.discunt = parseInt(total *(1-this.percent))
+        }
+})
+
     }
   },
 };
