@@ -197,7 +197,10 @@ export default {
 
       })
     },
-
+  getImgUrl(pet) {
+    var images = require.context('./image', false, /\.png$/)
+    return images('./' + pet + ".png")
+  },
 
     
     saveedit(){
